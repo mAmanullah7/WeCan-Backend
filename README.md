@@ -117,4 +117,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Contact
 
-For any questions or suggestions, please contact us at wecan@nita.ac.in.
+For any questions or suggestions, please contact us at developer.wecan.nita@gmail.com
