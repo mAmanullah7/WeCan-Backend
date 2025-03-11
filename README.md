@@ -103,11 +103,11 @@ The website uses NextAuth.js for authentication with the following features:
 - Role-based access control (user, admin, alumni)
 - Secure password hashing with bcrypt
 
-## 📱 Mobile App Integration
+## 📱 Mobile App Integration 
 
-The website includes information about the WeCan mobile app and provides download links for both Android and iOS platforms.
+The [WeCan mobile app](https://play.google.com/store/apps/details?id=com.nita.wecan) provides essential information and download links for both Android and iOS platforms.
 
-## 🤝 Contributing
+## 🤝 Contributing 
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
