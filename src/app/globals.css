@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  p {
+    @apply text-base md:text-lg;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2 rounded-md font-medium transition-all duration-300;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90;
+  }
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent/90;
+  }
+  .btn-danger {
+    @apply bg-danger text-white hover:bg-danger/90;
+  }
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-12 md:py-20;
+  }
+
+  /* Color utility classes */
+  .bg-wecan-blue {
+    @apply bg-primary;
+  }
+  .bg-wecan-yellow {
+    @apply bg-secondary;
+  }
+  .bg-wecan-green {
+    @apply bg-accent;
+  }
+  .bg-wecan-red {
+    @apply bg-danger;
+  }
+  
+  .text-wecan-blue {
+    @apply text-primary;
+  }
+  .text-wecan-yellow {
+    @apply text-secondary;
+  }
+  .text-wecan-green {
+    @apply text-accent;
+  }
+  .text-wecan-red {
+    @apply text-danger;
+  }
+} 
