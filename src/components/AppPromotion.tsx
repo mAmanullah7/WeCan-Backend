@@ -63,9 +63,9 @@ const AppPromotion = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="#" className="btn bg-black text-white hover:bg-black/90 flex items-center justify-center gap-2">
-                <FaApple className="text-xl" /> App Store
+                <FaApple className="text-xl" /> App Store 
               </Link>
-              <Link href="#" className="btn bg-primary text-white hover:bg-primary/90 flex items-center justify-center gap-2">
+              <Link href="https://play.google.com/store/apps/details?id=com.nita.wecan" className="btn bg-primary text-white hover:bg-primary/90 flex items-center justify-center gap-2">
                 <FaGooglePlay className="text-xl" /> Google Play
               </Link>
             </div>
@@ -78,11 +78,15 @@ const AppPromotion = () => {
             transition={{ duration: 0.6 }}
             className="flex justify-center"
           >
-            <div className="relative max-w-xs">
+            <div className="relative w-full max-w-xs mx-auto">
               <div className="absolute -top-4 -left-4 w-64 h-64 bg-secondary/20 rounded-full -z-10"></div>
               <div className="absolute -bottom-4 -right-4 w-64 h-64 bg-primary/20 rounded-full -z-10"></div>
-              <div className="bg-gray-200 h-[500px] w-[250px] rounded-3xl shadow-xl flex items-center justify-center">
-                <p className="text-gray-600 font-medium">App Screenshot</p>
+              <div className="bg-gray-200 w-[250px] aspect-[9/19.5] rounded-3xl shadow-xl overflow-hidden mx-auto">
+                <img 
+                  src="/images/app.png" 
+                  alt="WeCan Mobile App Screenshot" 
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
           </motion.div>

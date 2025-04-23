@@ -11,10 +11,10 @@ const Donate = () => {
   };
 
   const bankDetails = {
-    accountName: 'WeCan NIT Agartala',
-    accountNumber: '1234567890123456',
-    ifscCode: 'SBIN0012345',
-    bankName: 'State Bank of India',
+    accountName: 'WE CAN ',
+    accountNumber: '41211010000795',
+    ifscCode: 'CNRB0004121',
+    bankName: 'Canara Bank',
     branch: 'NIT Agartala Campus',
   };
 
@@ -49,8 +49,12 @@ const Donate = () => {
               <h3 className="text-2xl font-bold">Scan & Pay</h3>
             </div>
             <div className="flex justify-center mb-6">
-              <div className="h-64 w-64 bg-gray-200 flex items-center justify-center rounded-lg">
-                <p className="text-gray-600">QR Code Placeholder</p>
+              <div className="h-64 w-64 rounded-lg overflow-hidden">
+              <img 
+                src="/images/WeCanQR.jpeg" 
+                alt="WeCan donation QR code" 
+                className="h-full w-full object-cover"
+              />
               </div>
             </div>
             <p className="text-center text-gray-600 mb-4">
