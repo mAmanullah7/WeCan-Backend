@@ -29,19 +29,19 @@ const Footer = () => {
               A social welfare club of NIT Agartala, working towards the empowerment of underprivileged children through education.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors" aria-label="Facebook">
+              <a href="https://facebook.com" className="text-gray-300 hover:text-primary transition-colors" aria-label="Facebook">
                 <FaFacebook size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-secondary transition-colors" aria-label="Twitter">
+              <a href="https://x.com/WeCan_NITA" className="text-gray-300 hover:text-secondary transition-colors" aria-label="Twitter">
                 <FaTwitter size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-accent transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/we_can_nita/" className="text-gray-300 hover:text-accent transition-colors" aria-label="Instagram">
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/wecan-nita" className="text-gray-300 hover:text-primary transition-colors" aria-label="LinkedIn">
                 <FaLinkedin size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-secondary transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/@we_can_nita" className="text-gray-300 hover:text-secondary transition-colors" aria-label="YouTube">
                 <FaYoutube size={20} />
               </a>
             </div>
@@ -82,19 +82,19 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0" />
                 <span className="text-gray-300">
-                  NIT Agartala, Jirania, Tripura (West), Tripura, 799046
+                SAC Building-NIT Agartala, Jirania, Tripura (West), Tripura, 799046
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <FaPhone className="text-secondary flex-shrink-0" />
                 <a href="tel:+919876543210" className="text-gray-300 hover:text-white transition-colors">
-                  +91 98765 43210
+                  +91 75619 73554
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-accent flex-shrink-0" />
                 <a href="mailto:info@wecan.org" className="text-gray-300 hover:text-white transition-colors">
-                  info@wecan.org
+                  wecan@nita.ac.in
                 </a>
               </li>
             </ul>
@@ -133,17 +133,17 @@ const Footer = () => {
           <div className="mt-4 md:mt-0">
             <ul className="flex space-x-6 text-sm">
               <li>
-                <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/sitemap" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
                   Sitemap
                 </Link>
               </li>
