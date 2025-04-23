@@ -79,7 +79,7 @@ const teamMembers = {
     {
       id: 6,
       name: 'Gayatri',
-      position: 'General Secratery',
+      position: 'General Secretary',
       department: 'Computer Science & Engineering',
       image: '/images/placeholder.jpg',
       bio: 'Building partnerships to expand our reach and impact in the community.',
