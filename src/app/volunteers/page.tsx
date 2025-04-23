@@ -2,123 +2,123 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaTwitter, FaInstagram, FaSearch } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaInstagram, FaSearch } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 // Sample data for volunteers (replace with actual data from API)
-const years = [2023, 2022, 2021, 2020, 2019, 2018];
+const years = [2025, 2024, 2023, 2022, 2021, 2020];
 
 const teamMembers = {
-  2023: [
+  2025: [
     {
       id: 1,
-      name: 'Rahul Sharma',
+      name: 'Mohammad Amanullah',
       position: 'President',
-      department: 'Computer Science',
-      image: '/images/placeholder.jpg',
+      department: 'Chemical Engineering',
+      image: '/images/Amanullah4.jpg',
       bio: 'Passionate about education and technology. Leading WeCan to reach more underprivileged children.',
       socialLinks: {
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
-        instagram: 'https://instagram.com',
+        linkedin: 'https://www.linkedin.com/in/mamanullah7/',
+        email: 'ullahaman072003@gmail.com',
+        instagram: 'https://instagram.com/m.amanullah7',
       },
     },
     {
       id: 2,
-      name: 'Priya Patel',
+      name: 'Monica ',
       position: 'Vice President',
       department: 'Electrical Engineering',
       image: '/images/placeholder.jpg',
       bio: 'Dedicated to creating equal educational opportunities for all children.',
       socialLinks: {
         linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
+        email: 'example@gmail.com',
         instagram: 'https://instagram.com',
       },
     },
     {
       id: 3,
-      name: 'Amit Kumar',
-      position: 'Secretary',
-      department: 'Mechanical Engineering',
+      name: 'Amir Alam',
+      position: 'Vice President',
+      department: 'Computer Science & Engineering',
       image: '/images/placeholder.jpg',
       bio: 'Believes in the power of education to transform lives and communities.',
       socialLinks: {
         linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
+        email:     'example@gmail.com',
         instagram: 'https://instagram.com',
       },
     },
     {
       id: 4,
-      name: 'Neha Singh',
-      position: 'Treasurer',
-      department: 'Civil Engineering',
+      name: 'Tushar Tanish',
+      position: 'Finance Lead',
+      department: 'Computer Science & Engineering',
       image: '/images/placeholder.jpg',
       bio: 'Committed to managing resources efficiently to maximize our impact.',
       socialLinks: {
         linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
+        email: 'example@gmail.com',
         instagram: 'https://instagram.com',
       },
     },
     {
       id: 5,
-      name: 'Vikram Reddy',
-      position: 'Event Coordinator',
+      name: 'Tania Dhul',
+      position: '3rd Year Coordinator',
       department: 'Electronics Engineering',
       image: '/images/placeholder.jpg',
       bio: 'Organizing impactful events that bring joy and learning to children.',
       socialLinks: {
         linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
+        email: 'example@gmail.com',
         instagram: 'https://instagram.com',
       },
     },
     {
       id: 6,
-      name: 'Ananya Gupta',
-      position: 'Outreach Coordinator',
-      department: 'Chemical Engineering',
+      name: 'Gayatri',
+      position: 'General Secretary',
+      department: 'Computer Science & Engineering',
       image: '/images/placeholder.jpg',
       bio: 'Building partnerships to expand our reach and impact in the community.',
       socialLinks: {
         linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
+        email: 'example@gmail.com',
         instagram: 'https://instagram.com',
       },
     },
   ],
-  2022: [
-    {
-      id: 7,
-      name: 'Arjun Mehta',
-      position: 'President',
-      department: 'Computer Science',
-      image: '/images/placeholder.jpg',
-      bio: 'Led WeCan through a year of significant growth and impact.',
-      socialLinks: {
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
-        instagram: 'https://instagram.com',
-      },
-    },
-    {
-      id: 8,
-      name: 'Sneha Joshi',
-      position: 'Vice President',
-      department: 'Electrical Engineering',
-      image: '/images/placeholder.jpg',
-      bio: 'Focused on developing innovative teaching methodologies for our centers.',
-      socialLinks: {
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
-        instagram: 'https://instagram.com',
-      },
-    },
-    // Add more team members for 2022
-  ],
+  // 2022: [
+  //   {
+  //     id: 7,
+  //     name: 'Arjun Mehta',
+  //     position: 'President',
+  //     department: 'Computer Science',
+  //     image: '/images/placeholder.jpg',
+  //     bio: 'Led WeCan through a year of significant growth and impact.',
+  //     socialLinks: {
+  //       linkedin: 'https://linkedin.com',
+  //       email: 'example@gmail.com',
+  //       instagram: 'https://instagram.com',
+  //     },
+  //   },
+  //   {
+  //     id: 8,
+  //     name: 'Sneha Joshi',
+  //     position: 'Vice President',
+  //     department: 'Electrical Engineering',
+  //     image: '/images/placeholder.jpg',
+  //     bio: 'Focused on developing innovative teaching methodologies for our centers.',
+  //     socialLinks: {
+  //       linkedin: 'https://linkedin.com',
+  //       email: 'example@gmail.com',
+  //       instagram: 'https://instagram.com',
+  //     },
+  //   },
+  //   // Add more team members for 2022
+  // ],
   // Add data for other years
   2021: [],
   2020: [],
@@ -226,9 +226,11 @@ export default function Volunteers() {
                     className="bg-white rounded-lg overflow-hidden shadow-custom group"
                   >
                     <div className="h-64 bg-gray-300 relative">
-                      <div className="h-full w-full flex items-center justify-center">
-                        <p className="text-gray-600 font-medium">Member Photo</p>
-                      </div>
+                      <img
+                        src={member.image}
+                        alt={`${member.name} - ${member.position}`}
+                        className="h-full w-full object-cover"
+                      />
                       <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div className="flex space-x-4">
                           {member.socialLinks.linkedin && (
@@ -242,15 +244,13 @@ export default function Volunteers() {
                               <FaLinkedin size={24} />
                             </a>
                           )}
-                          {member.socialLinks.twitter && (
+                          {member.socialLinks.email && (
                             <a
-                              href={member.socialLinks.twitter}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                              href={`mailto:${member.socialLinks.email}`}
                               className="text-white hover:text-secondary transition-colors"
-                              aria-label={`${member.name}'s Twitter profile`}
+                              aria-label={`Email ${member.name}`}
                             >
-                              <FaTwitter size={24} />
+                              <FaEnvelope size={24} />
                             </a>
                           )}
                           {member.socialLinks.instagram && (
@@ -314,8 +314,15 @@ export default function Volunteers() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="hidden md:block"
               >
-                <div className="h-64 bg-primary-dark rounded-lg flex items-center justify-center">
-                  <p className="text-white/70">Volunteer Image</p>
+                <div className="h-64 relative rounded-lg overflow-hidden shadow-md">
+                  <img 
+                    src="/images/wecanteam.jpeg" 
+                    alt="Volunteers working together" 
+                    className="w-full h-full object-cover"
+                  />
+                    <div className="absolute inset-0 flex flex-col items-center justify-start">
+                    <span className="text-white font-medium text-lg bg-primary-dark/60 w-full py-3 text-center">Make a difference today</span>
+                    </div>
                 </div>
               </motion.div>
             </div>
