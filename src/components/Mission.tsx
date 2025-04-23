@@ -98,10 +98,8 @@ const Mission = () => {
                 Together, WeCan change lives, shape futures, and bring hope to where it's needed most. 
                 Your support can help us reach more children and make a bigger impact.
               </p>
-              <a href="/contact" >
-              <button className="btn bg-primary text-white hover:bg-primary-dark">
+              <a href="/contact" className="btn bg-primary text-white hover:bg-primary-dark">
                 Get Involved
-              </button>
               </a>
             </div>
             <div className="hidden md:block">
