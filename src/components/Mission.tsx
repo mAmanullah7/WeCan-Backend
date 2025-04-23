@@ -98,9 +98,11 @@ const Mission = () => {
                 Together, WeCan change lives, shape futures, and bring hope to where it's needed most. 
                 Your support can help us reach more children and make a bigger impact.
               </p>
+              <a href="/contact" >
               <button className="btn bg-primary text-white hover:bg-primary-dark">
                 Get Involved
               </button>
+              </a>
             </div>
             <div className="hidden md:block">
               <div className="grid grid-cols-2 gap-4">
@@ -117,7 +119,7 @@ const Mission = () => {
                   <div className="text-sm">Educational Programs</div>
                 </div>
                 <div className="bg-danger/20 rounded-lg p-4 text-center">
-                  <div className="text-3xl font-bold text-danger mb-2">5+</div>
+                  <div className="text-3xl font-bold text-danger mb-2">12+</div>
                   <div className="text-sm">Years of Impact</div>
                 </div>
               </div>
