@@ -37,19 +37,19 @@ export default function About() {
 
   const milestones = [
     {
-      year: 2010,
+      year: 2013,
       title: 'Foundation',
       description: 'WeCan was founded by a group of passionate students at NIT Agartala.',
     },
     {
-      year: 2013,
+      year: 2015,
       title: 'First Center',
       description: 'Established our first educational center serving 50 children.',
     },
     {
-      year: 2015,
+      year: 2017,
       title: 'Expansion',
-      description: 'Expanded to three centers reaching over 200 children.',
+      description: 'Expandeded centers reaching over 100 children.',
     },
     {
       year: 2018,
@@ -57,15 +57,16 @@ export default function About() {
       description: 'Launched our annual sports-cultural festival for underprivileged children.',
     },
     {
-      year: 2020,
-      title: 'Digital Initiative',
-      description: 'Started digital literacy programs and launched the WeCan mobile app.',
+      year: 2023,
+      title: 'Milestone Ananya6.0',
+      description: 'Biggest Ananya Festival with more than 300 Children partipiated incliding Kendriya Vidyalaya NIT Agartala.',
     },
     {
-      year: 2023,
-      title: 'Milestone',
-      description: 'Reached over 1000 children across multiple centers in Tripura.',
-    },
+      year: 2025,
+      title: 'Digital Initiative',
+      description: 'Started digital literacy programs and launched the WeCan mobile app.',
+    }
+   
   ];
 
   return (
@@ -105,7 +106,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
               <div className="w-20 h-1 bg-secondary mb-6"></div>
               <p className="mb-4">
-                WeCan was founded in 2010 by a group of passionate students at NIT Agartala who recognized the educational disparities in surrounding communities. What began as weekend tutoring sessions for a handful of children has grown into a comprehensive educational support system for underprivileged children across multiple centers.
+                WeCan was founded in 2013 by a group of passionate students at NIT Agartala who recognized the educational disparities in surrounding communities. What began as weekend tutoring sessions for a handful of children has grown into a comprehensive educational support system for underprivileged children across multiple centers.
               </p>
               <p className="mb-4">
                 Over the years, we've expanded our reach and impact, developing structured programs that not only focus on academic subjects but also on building confidence, creativity, and essential life skills. Our dedicated volunteers, many of whom are current students or alumni of NIT Agartala, are the backbone of our organization.
@@ -124,9 +125,13 @@ export default function About() {
               className="relative"
             >
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-                <div className="h-full w-full bg-gray-300 flex items-center justify-center">
-                  <p className="text-gray-600 font-medium">Our Story Image</p>
-                </div>
+                <Image
+                  src="/images/ourstory.png"
+                  alt="WeCan's journey - students teaching underprivileged children"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
               <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-primary/10 rounded-full -z-10"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-secondary/10 rounded-full -z-10"></div>
@@ -139,51 +144,57 @@ export default function About() {
       <section className="section bg-background">
         <div className="container-custom">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={fadeIn}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeIn}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Mission & Vision</h2>
-            <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Mission & Vision</h2>
+        <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-              variants={fadeIn}
-              transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-lg shadow-custom"
-            >
-              <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
-              <p className="mb-4">
-                To empower underprivileged children through quality education, mentorship, and skill development, enabling them to break the cycle of poverty and build a brighter future for themselves and their communities.
-              </p>
-              <p>
-                We strive to create equal learning opportunities, foster personal growth, and instill confidence in every child we reach, regardless of their socioeconomic background.
-              </p>
-            </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }}
+          className="bg-white p-8 rounded-lg shadow-custom"
+        >
+          <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+          <p className="mb-4">
+            To empower underprivileged children through quality education, mentorship, and skill development, enabling them to break the cycle of poverty.
+          </p>
+          <p className="mb-4">
+            We provide comprehensive development through technology education, computer skills, sports, dance, cultural activities, and arts to ensure holistic growth.
+          </p>
+          <p>
+            We strive to create equal learning opportunities, prepare students for admission to quality institutions like KV NIT Agartala, Ramakrishna Mission, Sainik School, and support them through 10th, 12th grades and competitive exams like JEE.
+          </p>
+        </motion.div>
 
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-              variants={fadeIn}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white p-8 rounded-lg shadow-custom"
-            >
-              <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
-              <p className="mb-4">
-                A world where every child has access to quality education and the opportunity to realize their full potential, regardless of their socioeconomic status.
-              </p>
-              <p>
-                We envision communities transformed through education, where children grow up to become confident, skilled, and compassionate individuals who contribute positively to society and inspire others to do the same.
-              </p>
-            </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeIn}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-white p-8 rounded-lg shadow-custom"
+        >
+          <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
+          <p className="mb-4">
+            A world where every child has access to quality education and the opportunity to realize their full potential, regardless of their socioeconomic status.
+          </p>
+          <p className="mb-4">
+            We envision digitally literate communities where children are equipped with both academic knowledge and technical skills to thrive in a technology-driven world.
+          </p>
+          <p>
+            We aspire to create pathways to prestigious educational institutions, cultivating graduates who excel academically while being well-rounded in sports, arts, and cultural activities—becoming confident, skilled individuals who positively transform their communities.
+          </p>
+        </motion.div>
           </div>
         </div>
       </section>
@@ -282,25 +293,115 @@ export default function About() {
       <section className="section bg-primary text-white">
         <div className="container-custom">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={fadeIn}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeIn}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
           >
-            <FaQuoteLeft className="text-5xl text-white/30 mx-auto mb-6" />
-            <p className="text-xl md:text-2xl font-light max-w-4xl mx-auto mb-8">
-              "WeCan has transformed not just the lives of the children we teach, but also our own. As volunteers, we've gained invaluable leadership skills, developed deeper empathy, and discovered the profound joy that comes from making a positive impact in someone's life."
-            </p>
-            <div className="flex items-center justify-center">
-              <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
-              <div className="text-left">
-                <p className="font-bold">Priya Sharma</p>
-                <p className="text-white/80">Former President, WeCan (2019-2020)</p>
-              </div>
-            </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Messages</h2>
+        <div className="w-20 h-1 bg-secondary mx-auto mb-10"></div>
           </motion.div>
+          
+          {/* Testimonials Carousel */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        {/* Director's Message */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeIn}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-white/10 p-8 rounded-lg"
+        >
+          <FaQuoteLeft className="text-4xl text-white/30 mb-4" />
+          <p className="text-lg font-light mb-6">
+            "I am proud to see the impact WeCan is making in our community. The initiative demonstrates how our institution's values extend beyond academic excellence to social responsibility and community service."
+          </p>
+          <div className="flex items-center">
+          <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+          <Image src="/images/directorsir.png" alt="Sujoy " width={48} height={48} />
+            </div>
+            <div className="text-left">
+          <p className="font-bold">Prof. S. K. Patra</p>
+          <p className="text-white/80">Director, NIT Agartala</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Dean's Message */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeIn}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-white/10 p-8 rounded-lg"
+        >
+          <FaQuoteLeft className="text-4xl text-white/30 mb-4" />
+          <p className="text-lg font-light mb-6">
+            "WeCan exemplifies how student initiatives can create meaningful change. The dedication shown by our students in nurturing young minds from underprivileged backgrounds is truly commendable."
+          </p>
+          <div className="flex items-center">
+          <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+          <Image src="/images/johnsir.png" alt="Sujoy " width={48} height={48} />
+            </div>
+            <div className="text-left">
+          <p className="font-bold">Prof. John Deb Barma</p>
+          <p className="text-white/80">Dean of Student Welfare, NIT Agartala</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Faculty Coordinator's Message */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeIn}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="bg-white/10 p-8 rounded-lg"
+        >
+          <FaQuoteLeft className="text-4xl text-white/30 mb-4" />
+          <p className="text-lg font-light mb-6">
+            "Working closely with these dedicated students has been inspiring. WeCan not only transforms the lives of children but also develops leadership and compassion within our student volunteers."
+          </p>
+          <div className="flex items-center">
+            <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+          <Image src="/images/facultycordinator.png" alt="Sujoy " width={48} height={48} />
+            </div>
+            <div className="text-left">
+          <p className="font-bold">Dr. Sujoy Chakraborty</p>
+          <p className="text-white/80">Faculty Coordinator, WeCan</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* President's Message */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeIn}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="bg-white/10 p-8 rounded-lg"
+        >
+          <FaQuoteLeft className="text-4xl text-white/30 mb-4" />
+          <p className="text-lg font-light mb-6">
+            "WeCan has transformed not just the lives of the children we teach, but also our own. As volunteers, we've gained invaluable leadership skills, developed deeper empathy, and discovered the profound joy that comes from making a positive impact."
+          </p>
+          <div className="flex items-center">
+            <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+          <Image src="/images/Amanullah.jpeg" alt="Aman" width={48} height={48} />
+            </div>
+            <div className="text-left">
+          <p className="font-bold">Mohammad Amanullah</p>
+          <p className="text-white/80">Former President, WeCan (2024-2025)</p>
+            </div>
+          </div>
+        </motion.div>
+          </div>
         </div>
       </section>
 
