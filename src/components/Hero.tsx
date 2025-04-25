@@ -7,9 +7,24 @@ import { FaArrowRight, FaHandsHelping, FaGraduationCap, FaHeart, FaUsers } from 
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-black to-black text-white overflow-hidden">
-      {/* Background overlay with pattern */}
-      <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-10"></div>
+    <div className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+      {/* Background video */}
+      <video 
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-70"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/images/WeCanvid.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
+      {/* Dark overlay to make content more readable */}
+      <div className="absolute inset-0 bg-black opacity-70 z-[1]"></div>
+      
+      {/* Background pattern overlay */}
+      <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-10 z-[2]"></div>
       
       {/* Content */}
       <div className="container-custom relative z-10 py-20 md:py-0">
@@ -23,7 +38,7 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start mb-6">
               <div className="relative h-40 w-40">
                 <Image 
-                  src="/logo.png" 
+                  src="/images/wecanlogo.png" 
                   alt="WeCan Logo" 
                   width={160}
                   height={160}
@@ -56,6 +71,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hidden lg:block"
           >
+            {/* Rest of your component remains the same */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-primary/10 backdrop-blur-sm p-6 rounded-lg">
                 <FaHandsHelping className="text-primary text-3xl mb-4" />
@@ -84,7 +100,7 @@ const Hero = () => {
       
       {/* Scroll indicator */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
       >
@@ -100,4 +116,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
