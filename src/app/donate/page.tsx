@@ -18,10 +18,10 @@ export default function Donate() {
   };
 
   const bankDetails = {
-    accountName: 'WeCan NIT Agartala',
-    accountNumber: '1234567890123456',
-    ifscCode: 'SBIN0012345',
-    bankName: 'State Bank of India',
+    accountName: 'WE CAN ',
+    accountNumber: '41211010000795',
+    ifscCode: 'CNRB0004121',
+    bankName: 'Canara Bank',
     branch: 'NIT Agartala Campus',
   };
 
@@ -45,9 +45,9 @@ export default function Donate() {
       icon: <FaLaptop className="text-3xl text-primary" />,
     },
     {
-      amount: 5000,
-      title: 'Nutrition Program',
-      description: 'Provide nutritious meals for 50 children for a week.',
+      amount: 10000,
+      title: 'Ananya Sports-Cultural fest',
+      description: 'Support our annual sports and cultural fest for children.',
       icon: <FaUtensils className="text-3xl text-primary" />,
     },
   ];
@@ -150,29 +150,32 @@ export default function Donate() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* QR Code Section */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-              transition={{ duration: 0.6 }}
-              className="bg-background p-8 rounded-lg shadow-custom"
-            >
-              <div className="flex items-center mb-6">
-                <FaQrcode className="text-3xl text-primary mr-4" />
-                <h3 className="text-2xl font-bold">Scan & Pay</h3>
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6 }}
+            className="bg-white p-8 rounded-lg shadow-custom"
+          >
+            <div className="flex items-center mb-6">
+              <FaQrcode className="text-3xl text-primary mr-4" />
+              <h3 className="text-2xl font-bold">Scan & Pay</h3>
+            </div>
+            <div className="flex justify-center mb-6">
+              <div className="h-64 w-64 rounded-lg overflow-hidden">
+              <img 
+                src="/images/WeCanQR.jpeg" 
+                alt="WeCan donation QR code" 
+                className="h-full w-full object-cover"
+              />
               </div>
-              <div className="flex justify-center mb-6">
-                <div className="h-64 w-64 bg-white flex items-center justify-center rounded-lg border-2 border-gray-200">
-                  <p className="text-gray-600">QR Code Placeholder</p>
-                </div>
-              </div>
-              <p className="text-center text-gray-600 mb-4">
-                Scan the QR code with any UPI app to donate directly to WeCan.
-              </p>
-              <div className="text-center">
-                <button className="btn btn-primary">Download QR Code</button>
-              </div>
-            </motion.div>
+            </div>
+            <p className="text-center text-gray-600 mb-4">
+              Scan the QR code with any UPI app to donate directly to WeCan.
+            </p>
+            <div className="text-center">
+              <button className="btn btn-primary">Download QR Code</button>
+            </div>
+          </motion.div>
 
             {/* Bank Details Section */}
             <motion.div
@@ -264,7 +267,7 @@ export default function Donate() {
       </section>
 
       {/* Tax Benefits */}
-      <section className="section bg-background">
+      {/* <section className="section bg-background">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -292,7 +295,7 @@ export default function Donate() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Impact Stories */}
       <section className="section bg-white">
@@ -322,7 +325,11 @@ export default function Donate() {
               className="bg-background rounded-lg overflow-hidden"
             >
               <div className="h-48 bg-gray-300 flex items-center justify-center">
-                <p className="text-gray-600">Impact Story Image</p>
+                <img 
+                  src="/images/impact1.jpg" 
+                  alt="Impact Story 1" 
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Ravi's Story</h3>
@@ -344,7 +351,11 @@ export default function Donate() {
               className="bg-background rounded-lg overflow-hidden"
             >
               <div className="h-48 bg-gray-300 flex items-center justify-center">
-                <p className="text-gray-600">Impact Story Image</p>
+              <img 
+                  src="/images/impact1.jpg" 
+                  alt="Impact Story 1" 
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Priya's Journey</h3>
@@ -366,7 +377,11 @@ export default function Donate() {
               className="bg-background rounded-lg overflow-hidden"
             >
               <div className="h-48 bg-gray-300 flex items-center justify-center">
-                <p className="text-gray-600">Impact Story Image</p>
+                <img 
+                    src="/images/impact1.jpg" 
+                    alt="Impact Story 1" 
+                    className="h-full w-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Amit's Success</h3>
