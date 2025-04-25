@@ -14,13 +14,12 @@ const AppPromotion = () => {
     {
       icon: <FaUsers className="text-3xl text-primary" />,
       title: 'Volunteer Management',
-      description: 'Easily sign up for volunteer shifts and track your volunteer hours.',
+      description: 'Easily sign up for volunteer shifts and track your volunteer hours, schedules & attendance.',
     },
     {
       icon: <FaCalendarAlt className="text-3xl text-primary" />,
       title: 'Event Calendar',
-      description: 'Access a complete calendar of WeCan events and activities.',
-    },
+      description: 'Access a complete calendar of WeCan events and activities, Student learning history management.',
   ];
 
   return (
