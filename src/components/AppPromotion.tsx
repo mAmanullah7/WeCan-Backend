@@ -19,8 +19,7 @@ const AppPromotion = () => {
     {
       icon: <FaCalendarAlt className="text-3xl text-primary" />,
       title: 'Event Calendar',
-      description: 'Access a complete calendar of WeCan events and activities, Student learning historty managment.',
-    },
+      description: 'Access a complete calendar of WeCan events and activities, Student learning history management.',
   ];
 
   return (
