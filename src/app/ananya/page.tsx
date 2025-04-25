@@ -15,12 +15,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // Sample data for events (replace with actual data from API)
-const years = [2023, 2022, 2021, 2020, 2019];
+const years = [2023];
 
 const events = {
   2023: {
     title: 'Ananya 2023: Celebrating Dreams',
-    date: 'November 15-17, 2023',
+    date: 'Septembber 16-18, 2023',
     location: 'NIT Agartala Campus',
     description: 'Ananya 2023 was our biggest festival yet, featuring a wide range of cultural performances, sports competitions, and educational activities for underprivileged children. Over 500 children from various centers participated in this three-day extravaganza.',
     highlights: [
@@ -32,7 +32,7 @@ const events = {
     ],
     images: [
       '/images/placeholder.jpg',
-      '/images/placeholder.jpg',
+      '/images/amanullah.jpeg',
       '/images/placeholder.jpg',
       '/images/placeholder.jpg',
       '/images/placeholder.jpg',
@@ -55,69 +55,69 @@ const events = {
       },
     ],
   },
-  2022: {
-    title: 'Ananya 2022: Igniting Potential',
-    date: 'November 18-20, 2022',
-    location: 'NIT Agartala Campus',
-    description: 'Ananya 2022 focused on discovering and nurturing the hidden talents of children. The festival included various competitions, workshops, and fun activities designed to boost confidence and creativity.',
-    highlights: [
-      'Talent hunt competition',
-      'Sports day with multiple events',
-      'Creative writing workshop',
-      'Dance and music performances',
-      'Educational games and activities',
-    ],
-    images: [
-      '/images/placeholder.jpg',
-      '/images/placeholder.jpg',
-      '/images/placeholder.jpg',
-    ],
-    activities: [
-      {
-        title: 'Talent Hunt',
-        description: 'A platform for children to showcase their unique talents and abilities.',
-        icon: <FaMusic className="text-4xl text-primary" />,
-      },
-      {
-        title: 'Sports Day',
-        description: 'A day filled with various sports activities and competitions.',
-        icon: <FaRunning className="text-4xl text-primary" />,
-      },
-      {
-        title: 'Creative Workshops',
-        description: 'Interactive workshops to enhance creativity and learning.',
-        icon: <FaTrophy className="text-4xl text-primary" />,
-      },
-    ],
-  },
-  // Add data for other years
-  2021: {
-    title: 'Ananya 2021: Virtual Celebration',
-    date: 'November 20-21, 2021',
-    location: 'Online Event',
-    description: 'Due to the pandemic, Ananya 2021 was held virtually, but the spirit remained unchanged. Children participated in online competitions, virtual performances, and interactive sessions.',
-    highlights: [],
-    images: [],
-    activities: [],
-  },
-  2020: {
-    title: 'Ananya 2020',
-    date: 'Cancelled due to COVID-19 pandemic',
-    location: 'N/A',
-    description: 'Unfortunately, Ananya 2020 had to be cancelled due to the COVID-19 pandemic and associated restrictions.',
-    highlights: [],
-    images: [],
-    activities: [],
-  },
-  2019: {
-    title: 'Ananya 2019: Unleashing Creativity',
-    date: 'November 15-17, 2019',
-    location: 'NIT Agartala Campus',
-    description: 'Ananya 2019 was a celebration of creativity and talent, featuring various cultural and sports events.',
-    highlights: [],
-    images: [],
-    activities: [],
-  },
+//   2022: {
+//     title: 'Ananya 2022: Igniting Potential',
+//     date: 'November 18-20, 2022',
+//     location: 'NIT Agartala Campus',
+//     description: 'Ananya 2022 focused on discovering and nurturing the hidden talents of children. The festival included various competitions, workshops, and fun activities designed to boost confidence and creativity.',
+//     highlights: [
+//       'Talent hunt competition',
+//       'Sports day with multiple events',
+//       'Creative writing workshop',
+//       'Dance and music performances',
+//       'Educational games and activities',
+//     ],
+//     images: [
+//       '/images/placeholder.jpg',
+//       '/images/placeholder.jpg',
+//       '/images/placeholder.jpg',
+//     ],
+//     activities: [
+//       {
+//         title: 'Talent Hunt',
+//         description: 'A platform for children to showcase their unique talents and abilities.',
+//         icon: <FaMusic className="text-4xl text-primary" />,
+//       },
+//       {
+//         title: 'Sports Day',
+//         description: 'A day filled with various sports activities and competitions.',
+//         icon: <FaRunning className="text-4xl text-primary" />,
+//       },
+//       {
+//         title: 'Creative Workshops',
+//         description: 'Interactive workshops to enhance creativity and learning.',
+//         icon: <FaTrophy className="text-4xl text-primary" />,
+//       },
+//     ],
+//   },
+//   // Add data for other years
+//   2021: {
+//     title: 'Ananya 2021: Virtual Celebration',
+//     date: 'November 20-21, 2021',
+//     location: 'Online Event',
+//     description: 'Due to the pandemic, Ananya 2021 was held virtually, but the spirit remained unchanged. Children participated in online competitions, virtual performances, and interactive sessions.',
+//     highlights: [],
+//     images: [],
+//     activities: [],
+//   },
+//   2020: {
+//     title: 'Ananya 2020',
+//     date: 'Cancelled due to COVID-19 pandemic',
+//     location: 'N/A',
+//     description: 'Unfortunately, Ananya 2020 had to be cancelled due to the COVID-19 pandemic and associated restrictions.',
+//     highlights: [],
+//     images: [],
+//     activities: [],
+//   },
+//   2019: {
+//     title: 'Ananya 2019: Unleashing Creativity',
+//     date: 'November 15-17, 2019',
+//     location: 'NIT Agartala Campus',
+//     description: 'Ananya 2019 was a celebration of creativity and talent, featuring various cultural and sports events.',
+//     highlights: [],
+//     images: [],
+//     activities: [],
+//   },
 };
 
 export default function Ananya() {
@@ -261,8 +261,14 @@ export default function Ananya() {
                 >
                   {currentEvent.images.map((image, index) => (
                     <SwiperSlide key={index}>
-                      <div className="h-64 bg-gray-300 rounded-lg overflow-hidden flex items-center justify-center">
-                        <p className="text-gray-600 font-medium">Event Image {index + 1}</p>
+                      <div className="h-64 rounded-lg overflow-hidden">
+                        <Image
+                          src={image}
+                          alt={`Ananya ${selectedYear} event image ${index + 1}`}
+                          width={500}
+                          height={300}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </SwiperSlide>
                   ))}
@@ -355,9 +361,11 @@ export default function Ananya() {
                 "Ananya was the best day of my life! I got to perform on stage for the first time and won a prize for my drawing. I can't wait for next year's festival!"
               </p>
               <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <Image src="/images/naman.jpeg" alt="Naman" width={48} height={48} />
+                         </div>
                 <div>
-                  <p className="font-bold">Ravi, 10</p>
+                  <p className="font-bold">Naman, 10</p>
                   <p className="text-sm text-gray-600">Participant</p>
                 </div>
               </div>
@@ -375,10 +383,12 @@ export default function Ananya() {
                 "Organizing Ananya was a rewarding experience. Seeing the joy on children's faces as they participated in various activities made all our hard work worthwhile."
               </p>
               <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <Image src="/images/zaidsekhani.png" alt="Zaid " width={48} height={48} />
+                         </div>
                 <div>
-                  <p className="font-bold">Priya Sharma</p>
-                  <p className="text-sm text-gray-600">Volunteer</p>
+                  <p className="font-bold">Zaid Sekhani</p>
+                  <p className="text-sm text-gray-600">Former President(2022-23)</p>
                 </div>
               </div>
             </motion.div>
@@ -395,10 +405,12 @@ export default function Ananya() {
                 "Ananya provides a wonderful platform for children to showcase their talents and build confidence. It's amazing to see how much they look forward to this annual event."
               </p>
               <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <Image src="/images/directorsir.png" alt="S.k Patra " width={48} height={48} />
+                         </div>
                 <div>
-                  <p className="font-bold">Dr. Rajesh Kumar</p>
-                  <p className="text-sm text-gray-600">Faculty Advisor</p>
+                  <p className="font-bold">PROF. S. K. PATRA</p>
+                  <p className="text-sm text-gray-600">Director, NIT Agartala</p>
                 </div>
               </div>
             </motion.div>
