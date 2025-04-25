@@ -52,12 +52,12 @@ export default function Contact() {
     {
       icon: <FaMapMarkerAlt className="text-2xl text-primary" />,
       title: 'Our Location',
-      details: 'NIT Agartala, Jirania, Tripura (W), India - 799046',
+      details: 'SAC Building-NIT Agartala, Jirania, Tripura (W), India - 799046',
     },
     {
       icon: <FaPhone className="text-2xl text-primary" />,
       title: 'Phone Number',
-      details: '+91 1234567890',
+      details: '+91 7561973554',
     },
     {
       icon: <FaEnvelope className="text-2xl text-primary" />,
@@ -67,15 +67,15 @@ export default function Contact() {
     {
       icon: <FaClock className="text-2xl text-primary" />,
       title: 'Working Hours',
-      details: 'Monday - Friday: 9:00 AM - 5:00 PM',
+      details: 'Monday - Saturday: 9:00 AM - 8:00 PM',
     },
   ];
 
   const socialLinks = [
     { icon: <FaFacebook />, url: 'https://facebook.com', label: 'Facebook' },
-    { icon: <FaTwitter />, url: 'https://twitter.com', label: 'Twitter' },
-    { icon: <FaInstagram />, url: 'https://instagram.com', label: 'Instagram' },
-    { icon: <FaLinkedin />, url: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: <FaTwitter />, url: 'https://x.com/WeCan_NITA', label: 'Twitter' },
+    { icon: <FaInstagram />, url: 'https://www.instagram.com/we_can_nita/', label: 'Instagram' },
+    { icon: <FaLinkedin />, url: 'https://www.linkedin.com/company/wecan-nita', label: 'LinkedIn' },
   ];
 
   return (
@@ -159,7 +159,7 @@ export default function Contact() {
                     className={`block w-full px-4 py-3 border ${
                       errors.name ? 'border-red-500' : 'border-gray-300'
                     } rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary`}
-                    placeholder="John Doe"
+                    placeholder="Alex Gond"
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
@@ -259,13 +259,32 @@ export default function Contact() {
                 Visit us at our office located at NIT Agartala campus.
               </p>
               
-              <div className="h-[400px] bg-gray-200 rounded-lg mb-8 flex items-center justify-center">
-                <p className="text-gray-600">Map Placeholder</p>
+              <div className="h-[400px] rounded-lg overflow-hidden mb-4">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.180810786194!2d91.41731607536503!3d23.841439278648985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753f5e98886d6e3%3A0x11bde7daacd03518!2sNIT%20Agartala!5e0!3m2!1sen!2sin!4v1682500274927!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="WeCan on Google Maps"
+                />
+              </div>
+              <div className="text-center mb-4">
+                <a 
+                  href="https://maps.app.goo.gl/VtUiHjmQDBXivkFfA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  WeCan on Google Maps
+                </a>
               </div>
               
               <div className="flex flex-col sm:flex-row sm:items-center justify-between">
                 <p className="text-gray-600 mb-4 sm:mb-0">
-                  Connect with us on social media:
+                  {/* Connect with us on social media: */}
                 </p>
                 <div className="flex space-x-4">
                   {socialLinks.map((link, index) => (
@@ -381,12 +400,16 @@ export default function Contact() {
               Join us in our mission to empower underprivileged children through education. Together, we can create a brighter future for them.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn bg-white text-primary hover:bg-white/90">
-                Volunteer With Us
-              </button>
-              <button className="btn bg-secondary text-white hover:bg-secondary/90">
-                Donate Now
-              </button>
+              <a href="/volunteers" className="inline-block">
+                <button className="btn bg-white text-primary hover:bg-white/90 w-full">
+                  Volunteer With Us
+                </button>
+              </a>
+              <a href="/donate" className="inline-block">
+                <button className="btn bg-secondary text-white hover:bg-secondary/90 w-full">
+                  Donate Now
+                </button>
+              </a>
             </div>
           </motion.div>
         </div>
