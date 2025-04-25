@@ -14,7 +14,7 @@ const AppPromotion = () => {
     {
       icon: <FaUsers className="text-3xl text-primary" />,
       title: 'Volunteer Management',
-      description: 'Easily sign up for volunteer shifts and track your volunteer hours, schedules & attendence.',
+      description: 'Easily sign up for volunteer shifts and track your volunteer hours, schedules & attendance.',
     },
     {
       icon: <FaCalendarAlt className="text-3xl text-primary" />,
