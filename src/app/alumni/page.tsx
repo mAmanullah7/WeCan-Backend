@@ -11,8 +11,8 @@ import Footer from '@/components/Footer';
 const alumniData = [
   {
     id: 1,
-    name: 'Rahul Sharma',
-    graduationYear: 2018,
+    name: 'Samarpan Bose',
+    graduationYear: 2020,
     batch: '2014-2018',
     position: 'Software Engineer',
     currentOrganization: 'Google',
@@ -26,7 +26,7 @@ const alumniData = [
   },
   {
     id: 2,
-    name: 'Priya Patel',
+    name: 'Zaid Sekhani',
     graduationYear: 2019,
     batch: '2015-2019',
     position: 'Data Scientist',
@@ -193,9 +193,11 @@ export default function Alumni() {
                     className="bg-white rounded-lg overflow-hidden shadow-custom group"
                   >
                     <div className="h-64 bg-gray-300 relative">
-                      <div className="h-full w-full flex items-center justify-center">
-                        <p className="text-gray-600 font-medium">Alumni Photo</p>
-                      </div>
+                      <img
+                        src={alumni.profilePicture}
+                        alt={`${alumni.name}'s profile`}
+                        className="w-full h-full object-cover"
+                      />
                       <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div className="flex space-x-4">
                           {alumni.socialLinks.linkedin && (
