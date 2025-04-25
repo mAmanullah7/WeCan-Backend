@@ -1,22 +1,30 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  const imagesPerPage = 6; // Initial number of images to show
 
   // Sample gallery images (replace with actual images)
   const galleryImages = [
-    { id: 1, src: '/images/placeholder.jpg', alt: 'Children learning in classroom' },
+    { id: 1, src: '/images/ChildrenReading.png', alt: 'Children learning in classroom' },
     { id: 2, src: '/images/placeholder.jpg', alt: 'Volunteers teaching' },
     { id: 3, src: '/images/placeholder.jpg', alt: 'Group activity' },
     { id: 4, src: '/images/placeholder.jpg', alt: 'Art and craft session' },
     { id: 5, src: '/images/placeholder.jpg', alt: 'Sports day' },
-    { id: 6, src: '/images/placeholder.jpg', alt: 'Cultural program' },
+    { id: 6, src: '/images/cultural1.jpeg', alt: 'Cultural program' },
+    { id: 7, src: '/images/placeholder.jpg', alt: 'Community event' },
+    { id: 8, src: '/images/placeholder.jpg', alt: 'Outdoor activities' },
+    { id: 9, src: '/images/placeholder.jpg', alt: 'Educational trip' },
+    // Add more images as needed
   ];
+
+  const displayedImages = showAll ? galleryImages : galleryImages.slice(0, imagesPerPage);
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -26,6 +34,16 @@ const Gallery = () => {
   const closeLightbox = () => {
     setSelectedImage(null);
     document.body.style.overflow = 'auto';
+  };
+
+  const navigateImage = (direction: 'prev' | 'next') => {
+    if (selectedImage === null) return;
+    
+    if (direction === 'prev') {
+      setSelectedImage(selectedImage === 0 ? galleryImages.length - 1 : selectedImage - 1);
+    } else {
+      setSelectedImage(selectedImage === galleryImages.length - 1 ? 0 : selectedImage + 1);
+    }
   };
 
   return (
@@ -45,32 +63,61 @@ const Gallery = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={image.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative overflow-hidden rounded-lg shadow-md cursor-pointer group"
-              onClick={() => openLightbox(index)}
-            >
-              <div className="aspect-w-16 aspect-h-12 relative">
-                <div className="h-64 w-full bg-gray-300 flex items-center justify-center">
-                  <p className="text-gray-600 font-medium">Gallery Image {image.id}</p>
+        <motion.div 
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <AnimatePresence>
+            {displayedImages.map((image, index) => (
+              <motion.div
+                key={image.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.5 }}
+                className="relative overflow-hidden rounded-lg shadow-md cursor-pointer group"
+                onClick={() => openLightbox(index)}
+                whileHover={{ y: -5 }}
+              >
+                <div className="aspect-w-16 aspect-h-12 relative h-64">
+                  <Image 
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
-              </div>
-              <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <p className="text-white font-medium text-center px-4">{image.alt}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <p className="text-white font-medium text-center px-4">{image.alt}</p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
-        <div className="text-center mt-10">
-          <button className="btn btn-outline">View More</button>
-        </div>
+        {!showAll && galleryImages.length > imagesPerPage && (
+          <div className="text-center mt-10">
+            <button 
+              className="btn btn-outline"
+              onClick={() => setShowAll(true)}
+            >
+              View More
+            </button>
+          </div>
+        )}
+        
+        {showAll && (
+          <div className="text-center mt-10">
+            <button 
+              className="btn btn-outline"
+              onClick={() => setShowAll(false)}
+            >
+              Show Less
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Lightbox */}
@@ -83,15 +130,44 @@ const Gallery = () => {
           >
             <FaTimes />
           </button>
-          <div className="relative max-w-4xl w-full h-[80vh] bg-gray-300 flex items-center justify-center">
-            <p className="text-gray-600 font-medium">
-              Gallery Image {galleryImages[selectedImage].id} (Enlarged)
-            </p>
-          </div>
+          
+          {/* Navigation buttons */}
+          <button 
+            className="absolute left-4 text-white text-3xl hover:text-gray-300 transition-colors"
+            onClick={() => navigateImage('prev')}
+            aria-label="Previous image"
+          >
+            <FaChevronLeft />
+          </button>
+          
+          <button 
+            className="absolute right-4 text-white text-3xl hover:text-gray-300 transition-colors"
+            onClick={() => navigateImage('next')}
+            aria-label="Next image"
+          >
+            <FaChevronRight />
+          </button>
+          
+          <motion.div 
+            key={selectedImage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="relative max-w-4xl w-full h-[80vh]"
+          >
+            <Image 
+              src={galleryImages[selectedImage].src}
+              alt={galleryImages[selectedImage].alt}
+              fill
+              sizes="100vw"
+              className="object-contain"
+              priority
+            />
+          </motion.div>
         </div>
       )}
     </section>
   );
 };
 
-export default Gallery; 
+export default Gallery;
