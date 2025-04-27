@@ -146,7 +146,7 @@ export default function Ananya() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Ananya</h1>
             <div className="w-20 h-1 bg-secondary mx-auto mb-8"></div>
             <p className="max-w-3xl mx-auto text-lg text-white/90">
-              Our annual sports-cultural festival that celebrates the talents, creativity, and joy of the children we serve.
+              Our annual Techno-Cultural-Sports festival that celebrates the talents, creativity, and joy of the children we serve.
             </p>
           </motion.div>
         </div>
@@ -365,7 +365,7 @@ export default function Ananya() {
                         <Image src="/images/naman.jpeg" alt="Naman" width={48} height={48} />
                          </div>
                 <div>
-                  <p className="font-bold">Naman, 10</p>
+                  <p className="font-bold">Naman, 6</p>
                   <p className="text-sm text-gray-600">Participant</p>
                 </div>
               </div>
