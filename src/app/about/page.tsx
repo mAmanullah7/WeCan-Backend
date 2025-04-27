@@ -5,6 +5,9 @@ import Image from 'next/image';
 import { FaGraduationCap, FaHandHoldingHeart, FaUsers, FaLightbulb, FaQuoteLeft } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ImageCarousel from '@/components/ImageCarousel';
+
+
 
 export default function About() {
   const fadeIn = {
@@ -96,46 +99,46 @@ export default function About() {
       <section className="section bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-              variants={fadeIn}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
-              <div className="w-20 h-1 bg-secondary mb-6"></div>
-              <p className="mb-4">
-                WeCan was founded in 2013 by a group of passionate students at NIT Agartala who recognized the educational disparities in surrounding communities. What began as weekend tutoring sessions for a handful of children has grown into a comprehensive educational support system for underprivileged children across multiple centers.
-              </p>
-              <p className="mb-4">
-                Over the years, we've expanded our reach and impact, developing structured programs that not only focus on academic subjects but also on building confidence, creativity, and essential life skills. Our dedicated volunteers, many of whom are current students or alumni of NIT Agartala, are the backbone of our organization.
-              </p>
-              <p>
-                Today, WeCan continues to grow, innovate, and adapt to meet the evolving needs of the children we serve, always guided by our core belief in the transformative power of education.
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-              variants={fadeIn}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="/images/ourstory.png"
-                  alt="WeCan's journey - students teaching underprivileged children"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-primary/10 rounded-full -z-10"></div>
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-secondary/10 rounded-full -z-10"></div>
-            </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
+          <div className="w-20 h-1 bg-secondary mb-6"></div>
+          <p className="mb-4">
+            WeCan was founded in 2013 by a group of passionate students at NIT Agartala who recognized the educational disparities in surrounding communities. What began as weekend tutoring sessions for a handful of children has grown into a comprehensive educational support system for underprivileged children across multiple centers.
+          </p>
+          <p className="mb-4">
+            Over the years, we've expanded our reach and impact, developing structured programs that not only focus on academic subjects but also on building confidence, creativity, and essential life skills. Our dedicated volunteers, many of whom are current students or alumni of NIT Agartala, are the backbone of our organization.
+          </p>
+          <p>
+            Today, WeCan continues to grow, innovate, and adapt to meet the evolving needs of the children we serve, always guided by our core belief in the transformative power of education.
+          </p>
+        </motion.div>
+        
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeIn}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative"
+        >
+          <ImageCarousel 
+            images={[
+          "/images/ourstory.jpeg",
+          "/images/ourstory1.jpeg",
+          "/images/ourstory2.jpeg",
+          "/images/ourstory.png",
+          
+            ]}
+          />
+          <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-primary/10 rounded-full -z-10"></div>
+          <div className="absolute -top-6 -left-6 w-32 h-32 bg-secondary/10 rounded-full -z-10"></div>
+        </motion.div>
           </div>
         </div>
       </section>
