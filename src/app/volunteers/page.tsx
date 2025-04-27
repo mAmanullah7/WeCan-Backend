@@ -3,13 +3,35 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaEnvelope, FaInstagram, FaSearch } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+
+// Define types for team members
+type SocialLinks = {
+  linkedin: string;
+  email: string;
+  instagram: string;
+};
+
+type TeamMember = {
+  id: number;
+  name: string;
+  position: string;
+  department: string;
+  image: string;
+  bio?: string;
+  socialLinks: SocialLinks;
+};
+
+type TeamMembersByYear = {
+  [key: number]: TeamMember[];
+};
 
 // Sample data for volunteers (replace with actual data from API)
 const years = [2025, 2024, 2023, 2022, 2021, 2020];
 
-const teamMembers = {
+const teamMembers: TeamMembersByYear = {
   2025: [
     {
       id: 1,
@@ -140,6 +162,7 @@ const teamMembers = {
 };
 
 export default function Volunteers() {
+  const router = useRouter();
   const [selectedYear, setSelectedYear] = useState(years[0]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -148,7 +171,11 @@ export default function Volunteers() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const filteredTeamMembers = teamMembers[selectedYear]?.filter(member =>
+  const handleApplyClick = () => {
+    router.push('/volunteers/register');
+  };
+
+  const filteredTeamMembers = teamMembers[selectedYear]?.filter((member: TeamMember) =>
     member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     member.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
     member.department.toLowerCase().includes(searchTerm.toLowerCase())
@@ -173,6 +200,14 @@ export default function Volunteers() {
             <p className="max-w-3xl mx-auto text-lg text-white/90">
               Meet the dedicated team of volunteers who make our mission possible. These passionate individuals are the backbone of WeCan.
             </p>
+            <div className="mt-8">
+              <button
+                onClick={handleApplyClick}
+                className="inline-block bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors"
+              >
+                Apply to Volunteers
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -314,7 +349,10 @@ export default function Volunteers() {
                 <p className="mb-6">
                   Become a part of our mission to empower underprivileged children through education. As a volunteer, you'll not only make a difference in children's lives but also develop valuable skills and create lasting memories.
                 </p>
-                <button className="btn bg-white text-primary hover:bg-white/90">
+                <button 
+                  onClick={handleApplyClick}
+                  className="btn bg-white text-primary hover:bg-white/90"
+                >
                   Apply to Volunteer
                 </button>
               </motion.div>
