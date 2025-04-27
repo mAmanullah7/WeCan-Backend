@@ -33,9 +33,9 @@ export default function Donate() {
       icon: <FaBook className="text-3xl text-primary" />,
     },
     {
-      amount: 1000,
-      title: 'Sponsor a Teacher',
-      description: 'Support a teacher for one month to educate underprivileged children.',
+      amount: 1500,
+      title: 'Sponsor a Student',
+      description: 'Support a child’s education for one month with tuition and learning resources.',
       icon: <FaChalkboardTeacher className="text-3xl text-primary" />,
     },
     {
@@ -46,7 +46,7 @@ export default function Donate() {
     },
     {
       amount: 10000,
-      title: 'Ananya Sports-Cultural fest',
+      title: 'Ananya Techno-Cultural-Sports fest',
       description: 'Support our annual sports and cultural fest for children.',
       icon: <FaUtensils className="text-3xl text-primary" />,
     },
