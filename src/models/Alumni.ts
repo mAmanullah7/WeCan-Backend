@@ -63,6 +63,7 @@ const AlumniSchema: Schema = new Schema(
     },
     profilePicture: {
       type: String,
+      default: '/images/alumni/placeholder.jpg',
     },
     socialLinks: {
       linkedin: String,
