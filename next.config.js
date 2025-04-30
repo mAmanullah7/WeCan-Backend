@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'vercel.app', 'vercel.com', 'res.cloudinary.com'],
+    domains: ['vercel.app', 'vercel.com', 'res.cloudinary.com'],
     // Add any other domains you'll be loading images from
   },
   // Enable SWC minification
