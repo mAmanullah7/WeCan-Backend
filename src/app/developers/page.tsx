@@ -38,7 +38,7 @@ const developers: DevelopersByTeam = {
       name: 'Mohammad Amanullah',
       role: 'Lead Developer',
       department: 'Chemical Engineering',
-      image: '/images/Amanullah4.jpg',
+      image: '/images/Amanullah.jpg',
       bio: 'Former WeCan President & Full-stack developer passionate about creating impactful web applications.',
       socialLinks: {
         linkedin: 'https://www.linkedin.com/in/mamanullah7/',

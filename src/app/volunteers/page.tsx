@@ -39,7 +39,7 @@ const teamMembers: TeamMembersByYear = {
       name: 'Mohammad Amanullah',
       position: 'President',
       department: 'Chemical Engineering',
-      image: '/',
+      image: '/images/amanullah.jpg',
       bio: 'Passionate about education and technology. Leading WeCan to reach more underprivileged children.',
       socialLinks: {
         linkedin: 'https://www.linkedin.com/in/mamanullah7/',
