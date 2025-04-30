@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'vercel.app', 'vercel.com'],
     // Add any other domains you'll be loading images from
   },
   // Enable SWC minification
@@ -41,6 +41,8 @@ const nextConfig = {
       },
     ];
   },
+  // Explicitly set output mode for Vercel
+  output: 'standalone',
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;
