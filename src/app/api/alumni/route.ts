@@ -5,6 +5,7 @@ import Alumni from '@/models/Alumni';
 import { connectToDatabase } from '@/lib/db';
 import { writeFile } from 'fs/promises';
 import path from 'path';
+import { v2 as cloudinary } from 'cloudinary';
 
 interface SessionUser {
   id: string;
@@ -17,6 +18,12 @@ interface SessionUser {
 interface Session {
   user: SessionUser;
 }
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME!,
+  api_key: process.env.CLOUDINARY_API_KEY!,
+  api_secret: process.env.CLOUDINARY_API_SECRET!,
+});
 
 export async function POST(req: Request) {
   try {
@@ -61,18 +68,22 @@ export async function POST(req: Request) {
     if (profilePicture) {
       const bytes = await profilePicture.arrayBuffer();
       const buffer = Buffer.from(bytes);
-      
-      // Generate unique filename
-      const timestamp = Date.now();
-      const extension = profilePicture.name.split('.').pop();
-      const filename = `${email.split('@')[0]}_${timestamp}.${extension}`;
-      
-      // Save file to public directory
-      const uploadDir = path.join(process.cwd(), 'public', 'images', 'alumni');
-      const filePath = path.join(uploadDir, filename);
-      await writeFile(filePath, buffer);
-      
-      profilePicturePath = `/images/alumni/${filename}`;
+      // Upload to Cloudinary
+      const uploadResult = await new Promise<any>((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+          {
+            folder: 'alumni',
+            resource_type: 'image',
+            public_id: email.split('@')[0] + '_' + Date.now(),
+          },
+          (error, result) => {
+            if (error) return reject(error);
+            resolve(result);
+          }
+        );
+        stream.end(buffer);
+      });
+      profilePicturePath = uploadResult.secure_url;
     }
 
     // Create new alumni record
