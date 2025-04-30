@@ -10,6 +10,14 @@ export interface IEvent extends Document {
   images?: string[];
   organizers?: string[];
   isActive: boolean;
+  registrations?: {
+    name: string;
+    email: string;
+    phone: string;
+    interest: string;
+    message: string;
+    createdAt: Date;
+  }[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -55,6 +63,32 @@ const EventSchema: Schema = new Schema(
       type: Boolean,
       default: true,
     },
+    registrations: [{
+      name: {
+        type: String,
+        required: true
+      },
+      email: {
+        type: String,
+        required: true
+      },
+      phone: {
+        type: String,
+        required: true
+      },
+      interest: {
+        type: String,
+        required: true
+      },
+      message: {
+        type: String,
+        required: true
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now
+      }
+    }]
   },
   { timestamps: true }
 );
