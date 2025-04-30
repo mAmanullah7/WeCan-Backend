@@ -14,6 +14,7 @@
     "create-admin": "node src/utils/create-admin.js"
   },
   "dependencies": {
+    "@prisma/client": "^6.6.0",
     "autoprefixer": "^10.4.17",
     "axios": "^1.6.7",
     "bcryptjs": "^2.4.3",
@@ -26,6 +27,7 @@
     "next-auth": "^4.24.5",
     "nodemailer": "^6.10.1",
     "postcss": "^8.4.35",
+    "prisma": "^6.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.3",
