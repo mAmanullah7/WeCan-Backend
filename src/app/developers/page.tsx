@@ -102,7 +102,7 @@ const developers: DevelopersByTeam = {
     },
     {
       id: 5,
-      name: 'Keerthi Priya Katta',
+      name: 'Keerthi Priya',
       role: 'WeCan Page Maintaine',
       department: 'Computer Science & Engineering',
       image: '/images/keerthi2.jpeg',
