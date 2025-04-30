@@ -6,6 +6,7 @@ import { FaLinkedin, FaEnvelope, FaInstagram, FaSearch } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ImageCarousel from '@/components/ImageCarousel';
 
 // Define types for team members
 type SocialLinks = {
@@ -77,12 +78,12 @@ const teamMembers: TeamMembersByYear = {
       name: 'Tushar Tanish',
       position: 'Finance Lead',
       department: 'Computer Science & Engineering',
-      image: '/images/placeholder.jpg',
+      image: '/images/tushar.jpg',
       bio: 'Committed to managing resources efficiently to maximize our impact.',
       socialLinks: {
-        linkedin: 'https://linkedin.com',
-        email: 'example@gmail.com',
-        instagram: 'https://instagram.com',
+        linkedin: 'https://www.linkedin.com/in/tushar-tanish-03934826a/',
+        email: 'tushartanish10@gmail.com',
+        instagram: 'https://www.instagram.com/tushartanish1_/',
       },
     },
     {
@@ -365,16 +366,14 @@ export default function Volunteers() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="hidden md:block"
               >
-                <div className="h-64 relative rounded-lg overflow-hidden shadow-md">
-                  <img 
-                    src="/images/wecanteam.jpeg" 
-                    alt="Volunteers working together" 
-                    className="w-full h-full object-cover"
-                  />
-                    <div className="absolute inset-0 flex flex-col items-center justify-start">
-                    <span className="text-white font-medium text-lg bg-primary-dark/60 w-full py-3 text-center">Make a difference today</span>
-                    </div>
-                </div>
+                <ImageCarousel 
+                  images={[
+                    "/images/wecanteam.jpeg",
+                    "/images/ChildrenReading.png",
+                    "/images/cultural1.jpeg"
+                  ]}
+                  autoplayInterval={4000}
+                />
               </motion.div>
             </div>
           </div>

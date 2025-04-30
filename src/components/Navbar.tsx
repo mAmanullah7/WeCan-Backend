@@ -40,6 +40,7 @@ const Navbar = () => {
     { name: 'Volunteers', path: '/volunteers' },
     { name: 'Ananya', path: '/ananya' },
     { name: 'Alumni', path: '/alumni' },
+    { name: 'Developers', path: '/developers' },
     { name: 'Donate', path: '/donate' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -59,14 +60,12 @@ const Navbar = () => {
     >
       <div className="container-custom flex justify-between items-center">
         <Link href="/" className="flex items-center">
-          <div className="relative h-12 w-12 mr-3">
-            {/* WeCan Logo */}
+          <div className="relative h-10 w-10 mr-3 rounded-full overflow-hidden border-2 border-black">
             <Image 
               src="/logo.png" 
               alt="WeCan Logo" 
-              width={48}
-              height={48}
-              className="object-contain"
+              fill
+              className="object-cover"
             />
           </div>
           <span className={`font-heading font-bold text-xl ${scrolled ? 'text-primary' : 'text-white'}`}>

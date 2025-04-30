@@ -67,6 +67,9 @@ const Footer = () => {
                 <Link href="/alumni" className="text-gray-300 hover:text-white transition-colors">Alumni</Link>
               </li>
               <li>
+                <Link href="/developers" className="text-gray-300 hover:text-white transition-colors">Developers</Link>
+              </li>
+              <li>
                 <Link href="/donate" className="text-gray-300 hover:text-white transition-colors">Donate</Link>
               </li>
               <li>
@@ -94,7 +97,7 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-accent flex-shrink-0" />
                 <a href="mailto:info@wecan.org" className="text-gray-300 hover:text-white transition-colors">
-                  wecan@nita.ac.in
+                  wecan.nitagartala@gmail.com
                 </a>
               </li>
             </ul>

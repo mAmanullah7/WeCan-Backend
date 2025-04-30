@@ -62,7 +62,7 @@ export default function Contact() {
     {
       icon: <FaEnvelope className="text-2xl text-primary" />,
       title: 'Email Address',
-      details: 'wecan@nita.ac.in',
+      details: 'wecan.nitagartala@gmail.com',
     },
     {
       icon: <FaClock className="text-2xl text-primary" />,
