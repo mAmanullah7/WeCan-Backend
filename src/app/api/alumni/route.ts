@@ -3,8 +3,6 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import Alumni from '@/models/Alumni';
 import { connectToDatabase } from '@/lib/db';
-import { writeFile } from 'fs/promises';
-import path from 'path';
 import { v2 as cloudinary } from 'cloudinary';
 
 interface SessionUser {
@@ -18,6 +16,12 @@ interface SessionUser {
 interface Session {
   user: SessionUser;
 }
+
+// Vercel Deployment Requirements:
+// 1. Use environment variables for Cloudinary credentials
+// 2. Do not write files to the local file system
+// 3. All static assets must be in /public
+// 4. Use serverless-friendly code (no fs/promises, no path for uploads)
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME!,

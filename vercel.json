@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "images": {
+    "domains": ["localhost", "vercel.app", "vercel.com", "res.cloudinary.com"]
+  }
 }
