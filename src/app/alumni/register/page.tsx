@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { FaUser, FaEnvelope, FaGraduationCap, FaBriefcase, FaBuilding, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaGraduationCap, FaBriefcase, FaBuilding, FaLinkedin, FaTwitter, FaInstagram, FaImage } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useSession } from 'next-auth/react';
 
 type FormData = {
   name: string;
@@ -19,11 +20,14 @@ type FormData = {
   linkedin: string;
   twitter: string;
   instagram: string;
+  profilePicture: FileList;
 };
 
 export default function AlumniRegister() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
   const router = useRouter();
+  const { data: session } = useSession();
   
   const {
     register,
@@ -40,21 +44,59 @@ export default function AlumniRegister() {
   const years = Array.from({ length: 20 }, (_, i) => currentYear - i);
   
   // Get the current value of the bio field for character count
-  const bioValue = watch('bio') || '';
+  const bioValue = watch('bio', '');
+  const profilePicture = watch('profilePicture');
+
+  // Handle image preview
+  useEffect(() => {
+    if (profilePicture && profilePicture.length > 0) {
+      const file = profilePicture[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  }, [profilePicture]);
 
   const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      setIsSubmitting(true);
+
+      // Create FormData for file upload
+      const formData = new FormData();
+      formData.append('name', data.name);
+      formData.append('email', data.email);
+      formData.append('graduationYear', data.graduationYear.toString());
+      formData.append('batch', data.batch);
+      formData.append('position', data.position);
+      formData.append('currentOrganization', data.currentOrganization);
+      formData.append('bio', data.bio);
+      formData.append('socialLinks', JSON.stringify({
+        linkedin: data.linkedin,
+        twitter: data.twitter,
+        instagram: data.instagram,
+      }));
       
-      console.log('Form data:', data);
+      if (data.profilePicture && data.profilePicture.length > 0) {
+        formData.append('profilePicture', data.profilePicture[0]);
+      }
+
+      const response = await fetch('/api/alumni', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to submit registration');
+      }
+
       toast.success('Registration submitted successfully! Your profile will be reviewed by an admin.');
       router.push('/alumni');
     } catch (error) {
-      console.error('Registration error:', error);
-      toast.error('Failed to submit registration. Please try again later.');
+      console.error('Error submitting registration:', error);
+      toast.error(error instanceof Error ? error.message : 'Failed to submit registration');
     } finally {
       setIsSubmitting(false);
     }
@@ -73,6 +115,44 @@ export default function AlumniRegister() {
             </p>
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              {/* Profile Picture Upload */}
+              <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                <h2 className="text-xl font-bold mb-4">Profile Picture</h2>
+                <div className="flex flex-col items-center space-y-4">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-gray-300">
+                    {previewImage ? (
+                      <img
+                        src={previewImage}
+                        alt="Profile preview"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                        <FaImage className="text-gray-400 text-4xl" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      {...register('profilePicture')}
+                      className="hidden"
+                      id="profilePicture"
+                    />
+                    <label
+                      htmlFor="profilePicture"
+                      className="btn bg-primary text-white hover:bg-primary/90 cursor-pointer"
+                    >
+                      Choose Image
+                    </label>
+                  </div>
+                  <p className="text-sm text-gray-500">
+                    Recommended size: 500x500 pixels. Max file size: 2MB
+                  </p>
+                </div>
+              </div>
+
               {/* Personal Information */}
               <div className="bg-gray-50 p-6 rounded-lg mb-6">
                 <h2 className="text-xl font-bold mb-4">Personal Information</h2>
@@ -99,7 +179,7 @@ export default function AlumniRegister() {
                         className={`block w-full pl-10 pr-3 py-2 border ${
                           errors.name ? 'border-red-500' : 'border-gray-300'
                         } rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary`}
-                        placeholder="John Doe"
+                        placeholder="Amanullah"
                       />
                     </div>
                     {errors.name && (
@@ -249,8 +329,8 @@ export default function AlumniRegister() {
                     {...register('bio', {
                       required: 'Bio is required',
                       minLength: {
-                        value: 50,
-                        message: 'Bio must be at least 50 characters',
+                        value: 10,
+                        message: 'Bio must be at least 10 characters',
                       },
                       maxLength: {
                         value: 1000,

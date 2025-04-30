@@ -6,9 +6,21 @@ import { connectToDatabase } from '@/lib/db';
 import { writeFile } from 'fs/promises';
 import path from 'path';
 
+interface SessionUser {
+  id: string;
+  name?: string | null;
+  email?: string | null;
+  image?: string | null;
+  role?: string;
+}
+
+interface Session {
+  user: SessionUser;
+}
+
 export async function POST(req: Request) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession(authOptions) as Session | null;
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -26,10 +38,21 @@ export async function POST(req: Request) {
 
     await connectToDatabase();
 
-    // Check if alumni already exists
-    const existingAlumni = await Alumni.findOne({ email });
+    // Check if alumni already exists by email or userId
+    const existingAlumni = await Alumni.findOne({
+      $or: [
+        { email },
+        { userId: session.user.id }
+      ]
+    });
+
     if (existingAlumni) {
-      return NextResponse.json({ error: 'Alumni already registered' }, { status: 400 });
+      if (existingAlumni.email === email) {
+        return NextResponse.json({ error: 'This email is already registered as an alumni' }, { status: 400 });
+      }
+      if (existingAlumni.userId.toString() === session.user.id) {
+        return NextResponse.json({ error: 'You have already registered as an alumni' }, { status: 400 });
+      }
     }
 
     let profilePicturePath = '/images/alumni/placeholder.jpg';
@@ -68,8 +91,11 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json(alumni, { status: 201 });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in alumni registration:', error);
+    if (error.code === 11000) {
+      return NextResponse.json({ error: 'You have already registered as an alumni' }, { status: 400 });
+    }
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
@@ -79,7 +105,7 @@ export async function GET(req: Request) {
     await connectToDatabase();
 
     const { searchParams } = new URL(req.url);
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession(authOptions) as Session | null;
     const isAdmin = session?.user?.role === 'admin';
     const approved = searchParams.get('approved');
 
@@ -98,7 +124,7 @@ export async function GET(req: Request) {
 
 export async function PATCH(req: Request) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession(authOptions) as Session | null;
     if (!session || session.user.role !== 'admin') {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
