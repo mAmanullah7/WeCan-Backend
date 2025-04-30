@@ -18,7 +18,7 @@ export async function GET() {
     }
 
     // Return the registrations sorted by creation date
-    const registrations = event.registrations.sort((a, b) => 
+    const registrations = event.registrations.sort((a: { createdAt: string | Date }, b: { createdAt: string | Date }) => 
       new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
     );
 

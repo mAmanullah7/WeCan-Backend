@@ -19,9 +19,11 @@
   },
   "dependencies": {
     "@prisma/client": "^6.6.0",
+    "@vercel/node": "^2.0.0",
     "autoprefixer": "^10.4.17",
     "axios": "^1.6.7",
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.6.0",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.0.3",
     "jsonwebtoken": "^9.0.2",
@@ -39,8 +41,7 @@
     "react-toastify": "^10.0.4",
     "swiper": "^11.0.5",
     "tailwindcss": "^3.4.1",
-    "zod": "^3.22.4",
-    "@vercel/node": "^2.0.0"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
