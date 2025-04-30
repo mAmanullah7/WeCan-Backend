@@ -1,5 +1,11 @@
 import mongoose from 'mongoose';
 
+// Add a type-safe global declaration for mongoose cache
+declare global {
+  // eslint-disable-next-line no-var
+  var mongoose: { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null } | undefined;
+}
+
 const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
