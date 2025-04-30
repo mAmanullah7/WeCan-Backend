@@ -3,7 +3,10 @@ import mongoose from 'mongoose';
 // Add a type-safe global declaration for mongoose cache
 declare global {
   // eslint-disable-next-line no-var
-  var mongoose: { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null } | undefined;
+  var mongoose: {
+    conn: typeof import('mongoose') | null | undefined;
+    promise: Promise<typeof import('mongoose')> | null | undefined;
+  } | undefined;
 }
 
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -17,7 +20,7 @@ let cached: { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | 
 if (!global.mongoose) {
   global.mongoose = { conn: null, promise: null };
 }
-cached = global.mongoose;
+cached = global.mongoose as unknown as { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null };
 
 export async function connectToDatabase() {
   if (cached.conn) {
