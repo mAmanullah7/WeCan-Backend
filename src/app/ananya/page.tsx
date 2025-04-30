@@ -41,7 +41,7 @@ const years = [2023];
 const events: Events = {
   2023: {
     title: 'Ananya 2023: Celebrating Dreams',
-    date: 'Septembber 16-18, 2023',
+    date: 'September 16-18, 2023',
     location: 'NIT Agartala Campus',
     description: 'Ananya 2023 was our biggest festival yet, featuring a wide range of cultural performances, sports competitions, and educational activities for underprivileged children. Over 500 children from various centers participated in this three-day extravaganza.',
     highlights: [
