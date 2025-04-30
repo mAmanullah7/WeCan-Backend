@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
@@ -38,10 +38,11 @@ export default function Profile() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   
   // Redirect if not authenticated
-  if (status === 'unauthenticated') {
-    router.push('/login');
-    return null;
-  }
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      router.push('/');
+    }
+  }, [status, router]);
   
   // Sample user data (replace with actual data from session)
   const userData = {
@@ -51,9 +52,9 @@ export default function Profile() {
     role: session?.user?.role || 'user',
     profilePicture: session?.user?.image || '/images/placeholder.jpg',
     socialLinks: {
-      linkedin: 'https://linkedin.com/in/johndoe',
-      twitter: 'https://twitter.com/johndoe',
-      instagram: 'https://instagram.com/johndoe',
+      linkedin: 'https://linkedin.com/in/',
+      twitter: 'https://twitter.com/',
+      instagram: 'https://instagram.com/',
     },
   };
   
@@ -117,9 +118,13 @@ export default function Profile() {
   };
 
   const handleLogout = async () => {
-    await signOut({ redirect: false });
-    toast.success('Logged out successfully');
-    router.push('/');
+    try {
+      await signOut({ redirect: false });
+      router.push('/');
+    } catch (error) {
+      console.error('Logout error:', error);
+      toast.error('Failed to logout. Please try again.');
+    }
   };
 
   const handleProfilePictureClick = () => {

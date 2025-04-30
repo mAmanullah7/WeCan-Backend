@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { FaCalendarAlt, FaMapMarkerAlt, FaUsers, FaTrophy, FaMusic, FaRunning, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -14,10 +15,30 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+interface Activity {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+}
+
+interface Event {
+  title: string;
+  date: string;
+  location: string;
+  description: string;
+  highlights: string[];
+  images: string[];
+  activities: Activity[];
+}
+
+interface Events {
+  [key: number]: Event;
+}
+
 // Sample data for events (replace with actual data from API)
 const years = [2023];
 
-const events = {
+const events: Events = {
   2023: {
     title: 'Ananya 2023: Celebrating Dreams',
     date: 'Septembber 16-18, 2023',
@@ -121,7 +142,7 @@ const events = {
 };
 
 export default function Ananya() {
-  const [selectedYear, setSelectedYear] = useState(years[0]);
+  const [selectedYear, setSelectedYear] = useState<number>(years[0]);
   const currentEvent = events[selectedYear];
 
   const fadeIn = {
@@ -215,7 +236,7 @@ export default function Ananya() {
               <div className="bg-background p-6 rounded-lg max-w-2xl mx-auto mb-12">
                 <h3 className="text-xl font-bold mb-4 text-center">Event Highlights</h3>
                 <ul className="space-y-2">
-                  {currentEvent.highlights.map((highlight, index) => (
+                  {currentEvent.highlights.map((highlight: string, index: number) => (
                     <li key={index} className="flex items-start">
                       <span className="inline-block w-2 h-2 rounded-full bg-secondary mt-2 mr-3"></span>
                       <span>{highlight}</span>
@@ -227,7 +248,7 @@ export default function Ananya() {
           </motion.div>
 
           {/* Image Gallery */}
-          {currentEvent.images && currentEvent.images.length > 0 && (
+          {currentEvent.images && currentEvent.images.length > 0 &&
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -259,7 +280,7 @@ export default function Ananya() {
                   autoplay={{ delay: 5000 }}
                   className="pb-12"
                 >
-                  {currentEvent.images.map((image, index) => (
+                  {currentEvent.images.map((image: string, index: number) => (
                     <SwiperSlide key={index}>
                       <div className="h-64 rounded-lg overflow-hidden">
                         <Image
@@ -282,7 +303,7 @@ export default function Ananya() {
                 </div>
               </div>
             </motion.div>
-          )}
+          }
 
           {/* Activities */}
           {currentEvent.activities && currentEvent.activities.length > 0 && (
@@ -296,7 +317,7 @@ export default function Ananya() {
               <h3 className="text-2xl font-bold mb-8 text-center">Activities</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {currentEvent.activities.map((activity, index) => (
+                {currentEvent.activities.map((activity: Activity, index: number) => (
                   <div key={index} className="bg-background p-6 rounded-lg text-center">
                     <div className="flex justify-center mb-4">{activity.icon}</div>
                     <h4 className="text-xl font-bold mb-2">{activity.title}</h4>
@@ -321,13 +342,13 @@ export default function Ananya() {
               transition={{ duration: 0.6 }}
               className="bg-primary text-white rounded-lg p-8 md:p-12 text-center"
             >
-              <h2 className="text-3xl font-bold mb-4">Join Us for Ananya {years[0] + 1}</h2>
+              <h2 className="text-3xl font-bold mb-4">Join Us for Ananya 2025</h2>
               <p className="max-w-3xl mx-auto mb-8">
                 Planning is already underway for our next Ananya festival. Stay tuned for dates, activities, and how you can participate or volunteer.
               </p>
-              <button className="btn bg-white text-primary hover:bg-white/90">
+              <Link href="/ananya/register" className="btn bg-white text-primary hover:bg-white/90">
                 Register Interest
-              </button>
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -361,9 +382,9 @@ export default function Ananya() {
                 "Ananya was the best day of my life! I got to perform on stage for the first time and won a prize for my drawing. I can't wait for next year's festival!"
               </p>
               <div className="flex items-center">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                        <Image src="/images/naman.jpeg" alt="Naman" width={48} height={48} />
-                         </div>
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image src="/images/naman.jpeg" alt="Naman" width={48} height={48} />
+                </div>
                 <div>
                   <p className="font-bold">Naman, 6</p>
                   <p className="text-sm text-gray-600">Participant</p>
@@ -383,9 +404,9 @@ export default function Ananya() {
                 "Organizing Ananya was a rewarding experience. Seeing the joy on children's faces as they participated in various activities made all our hard work worthwhile."
               </p>
               <div className="flex items-center">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                        <Image src="/images/zaidsekhani.png" alt="Zaid " width={48} height={48} />
-                         </div>
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image src="/images/zaidsekhani.png" alt="Zaid " width={48} height={48} />
+                </div>
                 <div>
                   <p className="font-bold">Zaid Sekhani</p>
                   <p className="text-sm text-gray-600">Former President(2022-23)</p>
@@ -405,9 +426,9 @@ export default function Ananya() {
                 "Ananya provides a wonderful platform for children to showcase their talents and build confidence. It's amazing to see how much they look forward to this annual event."
               </p>
               <div className="flex items-center">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                        <Image src="/images/directorsir.png" alt="S.k Patra " width={48} height={48} />
-                         </div>
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image src="/images/directorsir.png" alt="S.k Patra " width={48} height={48} />
+                </div>
                 <div>
                   <p className="font-bold">PROF. S. K. PATRA</p>
                   <p className="text-sm text-gray-600">Director, NIT Agartala</p>

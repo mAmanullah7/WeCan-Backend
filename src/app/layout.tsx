@@ -8,8 +8,12 @@ import SessionProvider from '@/providers/session-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'WeCan - Social Welfare Club of NIT Agartala',
+  title: 'WeCan | Social Welfare Club of NIT Agartala',
   description: 'WeCan is a social welfare club of NIT Agartala, working towards the empowerment of underprivileged children through education.',
+  icons: {
+    icon: '/images/wecanlogo.png',
+    apple: '/images/wecanlogo.png',
+  },
 };
 
 export default function RootLayout({

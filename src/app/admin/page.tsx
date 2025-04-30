@@ -37,9 +37,20 @@ interface Volunteer {
   createdAt: string;
 }
 
+interface AnanyaRegistration {
+  _id: string;
+  name: string;
+  email: string;
+  phone: string;
+  interest: string;
+  message: string;
+  createdAt: string;
+}
+
 export default function AdminDashboard() {
   const [alumniRequests, setAlumniRequests] = useState<AlumniRequest[]>([]);
   const [volunteers, setVolunteers] = useState<Volunteer[]>([]);
+  const [ananyaRegistrations, setAnanyaRegistrations] = useState<AnanyaRegistration[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
@@ -58,6 +69,7 @@ export default function AdminDashboard() {
     fetchAlumniRequests();
     if (session?.user?.role === 'admin') {
       fetchVolunteers();
+      fetchAnanyaRegistrations();
     }
   }, []);
 
@@ -88,6 +100,20 @@ export default function AdminDashboard() {
     } catch (err) {
       setError('Failed to load volunteer applications');
       console.error('Error fetching volunteers:', err);
+    }
+  };
+
+  const fetchAnanyaRegistrations = async () => {
+    try {
+      const response = await fetch('/api/ananya/registrations');
+      if (!response.ok) {
+        throw new Error('Failed to fetch Ananya registrations');
+      }
+      const data = await response.json();
+      setAnanyaRegistrations(data);
+    } catch (error) {
+      console.error('Error fetching Ananya registrations:', error);
+      toast.error('Failed to load Ananya registrations');
     }
   };
 
@@ -283,6 +309,58 @@ export default function AdminDashboard() {
               ) : (
                 <div className="text-center py-8">
                   <p className="text-sm text-gray-500">No pending alumni requests</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Ananya Registrations */}
+          <div className="bg-white rounded-lg shadow-sm border border-gray-100 mb-8">
+            <div className="p-4 border-b border-gray-100">
+              <h2 className="text-lg font-medium text-gray-700">Ananya Registrations</h2>
+            </div>
+            <div className="p-4">
+              {ananyaRegistrations.length > 0 ? (
+                <div className="space-y-4">
+                  {ananyaRegistrations.map((registration) => (
+                    <motion.div
+                      key={registration._id}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="bg-gray-50 rounded-md p-4 border border-gray-100"
+                    >
+                      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                          <h2 className="text-base font-medium text-gray-800">{registration.name}</h2>
+                          <p className="text-sm text-gray-500">{registration.email}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3 text-sm">
+                        <div className="flex items-center text-gray-600">
+                          <FaPhone className="text-gray-400 mr-2 text-xs" />
+                          <span>Phone: {registration.phone}</span>
+                        </div>
+                        <div className="flex items-center text-gray-600">
+                          <FaStar className="text-gray-400 mr-2 text-xs" />
+                          <span>Interest: {registration.interest}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="mt-3">
+                        <h3 className="text-sm font-medium text-gray-700 mb-1">Message</h3>
+                        <p className="text-sm text-gray-600">{registration.message}</p>
+                      </div>
+                      
+                      <div className="mt-3 text-xs text-gray-400">
+                        Submitted on: {new Date(registration.createdAt).toLocaleDateString()}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-8">
+                  <p className="text-sm text-gray-500">No Ananya registrations</p>
                 </div>
               )}
             </div>
