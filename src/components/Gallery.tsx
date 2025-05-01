@@ -12,15 +12,27 @@ const Gallery = () => {
 
   // Sample gallery images (replace with actual images)
   const galleryImages = [
-    { id: 1, src: '/images/ChildrenReading.png', alt: 'Children learning in classroom' },
-    { id: 2, src: '/images/placeholder.jpg', alt: 'Volunteers teaching' },
-    { id: 3, src: '/images/placeholder.jpg', alt: 'Group activity' },
-    { id: 4, src: '/images/placeholder.jpg', alt: 'Art and craft session' },
-    { id: 5, src: '/images/placeholder.jpg', alt: 'Sports day' },
+    { id: 1, src: '/images/n5.jpeg', alt: 'Children learning in classroom' },
+    { id: 2, src: '/images/n7.jpeg', alt: 'Volunteers teaching' },
+    { id: 3, src: '/images/a2.jpeg', alt: 'Achievement' },
+    { id: 4, src: '/images/n8.jpeg', alt: 'Art and craft session' },
+    { id: 5, src: '/images/s1.jpg', alt: 'Sports day' },
     { id: 6, src: '/images/cultural1.jpeg', alt: 'Cultural program' },
-    { id: 7, src: '/images/placeholder.jpg', alt: 'Community event' },
-    { id: 8, src: '/images/placeholder.jpg', alt: 'Outdoor activities' },
-    { id: 9, src: '/images/placeholder.jpg', alt: 'Educational trip' },
+    { id: 7, src: '/images/n4.jpeg', alt: '' },  
+    { id: 8, src: '/images/s2.jpg', alt: '' },
+    { id: 9, src: '/images/c1.jpg', alt: '' },
+    { id: 10, src: '/images/n3.jpeg', alt: '' },
+    { id: 11, src: '/images/n9.jpeg', alt: '' },
+    { id: 12, src: '/images/n10.jpeg', alt: '' },
+    { id: 13, src: '/images/n11.jpeg', alt: '' },
+    { id: 14, src: '/images/n13.jpeg', alt: '' },
+    { id: 15, src: '/images/n12.jpeg', alt: '' },
+    { id: 16, src: '/images/n14.jpeg', alt: '' },
+    { id: 17, src: '/images/a1.jpeg', alt: '' },
+    { id: 18, src: '/images/a3.jpeg', alt: '' },
+    { id: 19, src: '/images/a4.jpeg', alt: '' },
+    { id: 20, src: '/images/a5.jpeg', alt: '' },
+    { id: 21, src: '/images/c2.jpeg', alt: '' },
     // Add more images as needed
   ];
 

@@ -259,8 +259,10 @@ export default function Alumni() {
                 <ImageCarousel 
                   images={[
                     "/images/alumni/alumini.png",
-                    "/images/alumni/prof1_1745867939520.jpg",
-                    "/images/alumni/prof1_1745795914791.jpeg"
+                    "/images/alum.jpeg",
+                    "/images/alum1.jpeg",
+                    "/images/alumni.jpg",
+                    "/images/team.jpg"
                   ]}
                   autoplayInterval={4000}
                 />
