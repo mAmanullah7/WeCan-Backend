@@ -1,9 +1,10 @@
 # WeCan - Social Welfare Club Website
 
 <div align="center">
-  <img src="public/images/wecanlogo.png" alt="WeCan Logo" width="200" />
+  <img src="https://github.com/user-attachments/assets/a1a7a8aa-cd12-4940-a86f-56e71afbb9e7" alt="WeCan Logo" width="200" />
   <p><strong>Learn. Lead. Laugh.</strong></p>
 </div>
+
 
 A comprehensive, responsive website for WeCan, a social welfare club of NIT Agartala, dedicated to empowering underprivileged children through education, mentorship, and skill development programs.
 
