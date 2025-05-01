@@ -5,6 +5,7 @@ import { FaHandHoldingHeart, FaQrcode, FaUniversity, FaCopy, FaBook, FaChalkboar
 import { toast } from 'react-toastify';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useState } from 'react';
 
 export default function Donate() {
   const fadeIn = {
@@ -35,7 +36,7 @@ export default function Donate() {
     {
       amount: 1500,
       title: 'Sponsor a Student',
-      description: 'Support a child’s education for one month with tuition and learning resources.',
+      description: "Support a child's education for one month with tuition and learning resources.",
       icon: <FaChalkboardTeacher className="text-3xl text-primary" />,
     },
     {
@@ -50,6 +51,33 @@ export default function Donate() {
       description: 'Support our annual sports and cultural fest for children.',
       icon: <FaUtensils className="text-3xl text-primary" />,
     },
+  ];
+  
+
+  const [openStory, setOpenStory] = useState<string | null>(null);
+
+  const impactStories = [
+    {
+      name: 'Naman Rai',
+      title: 'Our Little Hero – Naman Rai',
+      summary: `Naman Rai is a regular student at WeCan — bright, sincere, and especially brilliant in Mathematics. For his age, he speaks with such clarity and conviction that it leaves everyone amazed.....`,
+      full: `Naman Rai is a regular student at WeCan — bright, sincere, and especially brilliant in Mathematics. For his age, he speaks with such clarity and conviction that it leaves everyone amazed. He carries himself like a young political leader, with natural leadership qualities that draw people to him. His intelligence is impressive, but it's his presence and maturity that leave a lasting impact.\n\nHowever, there's one particular incident that moved all of us deeply — something none of us will ever forget.\n\nIt was the day of Holi celebrations at WeCan. All the volunteers had gathered early, with colours and sweets. We were excitedly waiting for the kids to arrive so we could begin the celebrations. When the children walked into the room, Naman was among them, as always. But something felt different. Though he wore a smile, it wasn't quite the same. His eyes looked tired and swollen, dark circles surrounding them. Concerned, we quietly asked one of the older kids — a close friend of Naman — if something had happened. He hesitated for a moment and then said, "Naman's mother passed away last night. He cried all night."\n\nWe stood there in silence, stunned. A few of us had tears welling up in our eyes. It was hard to comprehend. Yet, there he was — smiling gently, just a little less brightly than usual. And to our utter disbelief, he was the first to pick up colours and start the Holi celebration. While we were still processing the loss, Naman had already decided to lead. The kids followed his lead, and the room slowly filled with laughter and colours.\n\nBut my heart and mind were elsewhere. I stood in the middle of the room, frozen, surrounded by the happy chaos, with a hundred questions racing through my mind. "Why did he even come today? How is he smiling through such grief? How strong can a child be?"\n\nI couldn't stop thinking about his mother. I still remember how she used to come to WeCan often, asking about Naman's progress. She was deeply involved — always making sure he came regularly, attending every parent meeting, encouraging his studies and growth. She believed in him. And suddenly, in that moment, all my questions were answered. Naman came to WeCan not in spite of his grief, but because of it. He came to honour his mother — to live the life she dreamed for him. Instead of mourning in silence, he chose to show strength, to carry forward her wishes. That realization moved me to tears.\n\nSince that day, whenever I see Naman, I don't feel pity or sadness. I feel pride — a deep, unwavering pride. He's not just a little boy anymore. He has grown up a lot — far beyond his years. He is, and always will be, our hero.`,
+      image: '/images/naman.jpeg'
+    },
+    {
+      name: 'Muskan Aktar',
+      title: 'Muskan Aktar – Dreaming Big',
+      summary: `My name is Muskan Aktar, and I am in the 3rd grade at T.E. College High School. I dream of becoming a doctor when I grow up because I want to help people feel better...`,
+      full: `My name is Muskan Aktar, and I am in the 3rd grade at T.E. College High School. I dream of becoming a doctor when I grow up because I want to help people feel better. Today, someone suggested to my mother that I should join WeCan to study, but she replied, "use abhi khelne do; jab voh badee ho jayegi, to voh vaise bhee shaadi kar legi" But I believe I can be more than that. I want to study hard and show my parents that even a simple girl from a small town like Agartala can do something amazing. I hope one day they will see that I can make a difference.`,
+      image: '/images/muskan.jpeg'
+    },
+    {
+      name: 'Mahi',
+      title: 'Mahi – The Game Changer',
+      summary: `I'm Mahi, a student at WeCan — but I'm a little different from other students. People often think I'm a boy when they see me, but I am a girl, a tomboy, to be exact...`,
+      full: `I'm Mahi  a student at WeCan — but I'm a little different from other students. People often think I'm a boy when they see me, but I am a girl, a tomboy, to be exact. I'm almost always surrounded by boys. Studying during the WeCan sessions is tough for me — I just can't sit still for long. But Saturday? That's my day — Game Day. And on Game Day, I'm the main character. Badminton, cricket, carrom — any game you name, I'm there. And honestly? Some boys even admit that I play better than them.\n\nOne day, a didi asked me, "Mahi, bade hoke kya ~karoge~ karogi?" I replied, "Kya karungi, bat, ball khelungi." She laughed — but I was serious. The volunteers at WeCan help me a lot. Sometimes, they even trick me into studying by calling it a game — and somehow, it works! These games will always be a part of my life. And the moments I spend at WeCan? They make me feel like I'm the star of my own story. Because here, I can grow, learn, and play — just by being myself.`,
+      image: '/images/mahi.jpeg'
+    }
   ];
 
   return (
@@ -316,83 +344,37 @@ export default function Donate() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-              transition={{ duration: 0.6 }}
-              className="bg-background rounded-lg overflow-hidden"
-            >
-              <div className="h-48 bg-gray-300 flex items-center justify-center">
-                <img 
-                  src="/images/impact1.jpg" 
-                  alt="Impact Story 1" 
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Ravi's Story</h3>
-                <p className="text-gray-600 mb-4">
-                  Thanks to your support, Ravi now has access to quality education and has shown remarkable improvement in his studies.
-                </p>
-                <button className="text-primary font-medium hover:text-primary/80">
-                  Read More
-                </button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-background rounded-lg overflow-hidden"
-            >
-              <div className="h-48 bg-gray-300 flex items-center justify-center">
-              <img 
-                  src="/images/impact1.jpg" 
-                  alt="Impact Story 1" 
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Priya's Journey</h3>
-                <p className="text-gray-600 mb-4">
-                  Priya discovered her passion for art through our programs and has won several competitions at the state level.
-                </p>
-                <button className="text-primary font-medium hover:text-primary/80">
-                  Read More
-                </button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-background rounded-lg overflow-hidden"
-            >
-              <div className="h-48 bg-gray-300 flex items-center justify-center">
-                <img 
-                    src="/images/impact1.jpg" 
-                    alt="Impact Story 1" 
+            {impactStories.map((story, idx) => (
+              <motion.div
+                key={story.name}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeIn}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="bg-background rounded-lg overflow-hidden"
+              >
+                <div className="h-48 bg-gray-300 flex items-center justify-center">
+                  <img 
+                    src={story.image} 
+                    alt={story.title} 
                     className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Amit's Success</h3>
-                <p className="text-gray-600 mb-4">
-                  From struggling with basic math to becoming a top performer in his class, Amit's transformation has been remarkable.
-                </p>
-                <button className="text-primary font-medium hover:text-primary/80">
-                  Read More
-                </button>
-              </div>
-            </motion.div>
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{story.title}</h3>
+                  <p className="text-gray-600 mb-4">
+                    {openStory === story.name ? story.full.split('\n').map((line, i) => <span key={i}>{line}<br/></span>) : story.summary}
+                  </p>
+                  <button
+                    className="text-primary font-medium hover:text-primary/80"
+                    onClick={() => setOpenStory(openStory === story.name ? null : story.name)}
+                  >
+                    {openStory === story.name ? 'Show Less' : 'Read More'}
+                  </button>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

@@ -6,6 +6,7 @@ import { FaGraduationCap, FaHandHoldingHeart, FaUsers, FaLightbulb, FaQuoteLeft 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ImageCarousel from '@/components/ImageCarousel';
+import { title } from 'process';
 
 
 
@@ -42,32 +43,37 @@ export default function About() {
     {
       year: 2013,
       title: 'Foundation',
-      description: 'WeCan was founded by a group of passionate students at NIT Agartala.',
+      description: 'On August 15th, WeCan was founded.',
+    },
+    {
+      year: 2014,
+      title: 'Room Alloted',
+      description: 'We got a room specifically for WeCan in ECE building, NIT Agartla.',
     },
     {
       year: 2015,
-      title: 'First Center',
-      description: 'Established our first educational center serving 50 children.',
+      title: 'Ananya Fest',
+      description: 'Launched our annual sports-cultural festival for underprivileged children.',
     },
     {
       year: 2017,
-      title: 'Expansion',
-      description: 'Expandeded centers reaching over 100 children.',
+      title: 'Permanent Room',
+      description: 'We got a permanent centre in SAC building, NIT Agartala',
     },
     {
       year: 2018,
-      title: 'Ananya Festival',
-      description: 'Launched our annual sports-cultural festival for underprivileged children.',
+      title: 'Project Koushal',
+      description: 'Scratch course aimed at developing childrens creativity and collaboration skills.',
     },
     {
       year: 2023,
       title: 'Milestone Ananya6.0',
-      description: 'Biggest Ananya Festival with more than 300 Children partipiated incliding Kendriya Vidyalaya NIT Agartala.',
+      description: 'Biggest Ananya Festival with more than 300 Children partipiated including Kendriya Vidyalaya NIT Agartala.',
     },
     {
       year: 2025,
       title: 'Digital Initiative',
-      description: 'Started digital literacy programs and launched the WeCan mobile app.',
+      description: 'Started digital literacy programs and launched the WeCan mobile app & launchde our official website.',
     }
    
   ];
@@ -138,8 +144,8 @@ export default function About() {
           "/images/04.jpg",
           "/images/05.jpg",
           "/images/06.jpg",
-          "/images/ourstory.jpg",
           "/images/ourstory.jpeg",
+          "/images/ourstory5.jpeg",
 
           
             ]}
