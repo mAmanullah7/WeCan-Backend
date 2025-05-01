@@ -219,7 +219,7 @@ export default function AlumniRegister() {
                         } rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-gray-100`}
                         placeholder="your@email.com"
                         readOnly
-                        value={session?.user?.email || ''}
+                        value={session?.user?.email || 'Login to register'}
                       />
                     </div>
                     {errors.email && (
