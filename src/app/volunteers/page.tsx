@@ -706,8 +706,10 @@ export default function Volunteers() {
                 <ImageCarousel 
                   images={[
                     "/images/wecanteam.jpeg",
-                    "/images/ChildrenReading.png",
-                    "/images/cultural1.jpeg"
+                    "/images/t2.jpeg",
+                    "/images/n9.jpeg",
+                    "/images/t3.jpeg",
+                    "/images/team.jpg"
                   ]}
                   autoplayInterval={4000}
                 />

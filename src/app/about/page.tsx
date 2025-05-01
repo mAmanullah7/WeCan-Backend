@@ -133,6 +133,14 @@ export default function About() {
           "/images/ourstory1.jpeg",
           "/images/ourstory2.jpeg",
           "/images/ourstory.png",
+          "/images/02.jpg",
+          "/images/03.jpg",
+          "/images/04.jpg",
+          "/images/05.jpg",
+          "/images/06.jpg",
+          "/images/ourstory.jpg",
+          "/images/ourstory.jpeg",
+
           
             ]}
           />
