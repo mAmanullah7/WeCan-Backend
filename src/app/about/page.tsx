@@ -348,7 +348,7 @@ export default function About() {
           </p>
           <div className="flex items-center">
           <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-          <Image src="/images/johnsir.png" alt="Sujoy " width={48} height={48} />
+          <Image src="/images/Johnsir.png" alt="Sujoy " width={48} height={48} />
             </div>
             <div className="text-left">
           <p className="font-bold">Prof. John Deb Barma</p>
@@ -372,7 +372,7 @@ export default function About() {
           </p>
           <div className="flex items-center">
             <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-          <Image src="/images/facultycordinator.png" alt="Sujoy " width={48} height={48} />
+          <Image src="/images/facultyCordinator.png" alt="Sujoy " width={48} height={48} />
             </div>
             <div className="text-left">
           <p className="font-bold">Dr. Sujoy Chakraborty</p>
@@ -396,7 +396,7 @@ export default function About() {
           </p>
           <div className="flex items-center">
             <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-          <Image src="/images/Amanullah.jpeg" alt="Aman" width={48} height={48} />
+          <Image src="/images/amanullah.jpeg" alt="Aman" width={48} height={48} />
             </div>
             <div className="text-left">
           <p className="font-bold">Mohammad Amanullah</p>

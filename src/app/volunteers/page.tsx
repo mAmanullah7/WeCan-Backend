@@ -141,7 +141,7 @@ const teamMembers: TeamMembersByYear = {
       name: 'Sudesh Singh',
       position: 'Assistant General Secretary',
       department: 'Biotechnology and Biochemical',
-      image: '/images/sudesh.jpeg',
+      image: '/images/Sudesh.jpeg',
       socialLinks: {
         linkedin: 'http://linkedin.com/in/sudesh-singh-8099722a7',
         email: 'sudeshsingh42023@gmail.com',
@@ -247,7 +247,7 @@ const teamMembers: TeamMembersByYear = {
     {
       id: 18,
       name: 'Abdur Raheem Chowdhary',
-      position: 'Proudly Volunteer',
+      position: 'Volunteer',
       department: 'Engineering Physics',
       image: '/images/raheem.jpg',
       socialLinks: {
@@ -273,7 +273,7 @@ const teamMembers: TeamMembersByYear = {
       name: 'Mohammad Sakib',
       position: 'Volunteer',
       department: 'Electrical Engineering',
-      image: '/images/sakib.heic',
+      image: '/images/sakib.jpeg',
       socialLinks: {
         linkedin: 'https://www.linkedin.com/in/mohammad-sakib-085972318',
         email: 'mohammadsakib00978@gmail.com',
@@ -368,7 +368,7 @@ const teamMembers: TeamMembersByYear = {
       id: 28,
       name: 'Puja Das',
       position: 'Volunteer',
-      department: 'CSE',
+      department: 'Computer Science & Engineering',
       image: '/images/puja.jpg',
       socialLinks: {
         linkedin: 'https://www.linkedin.com/in/puja-das-baa44a235',
@@ -416,7 +416,7 @@ const teamMembers: TeamMembersByYear = {
       id: 32,
       name: 'Suraj Kumar',
       position: 'Volunteer',
-      department: 'CSE',
+      department: 'Computer Science & Engineering',
       image: '/images/lucky.jpg',
       socialLinks: {
         linkedin: 'https://www.linkedin.com/in/suraj-kumar-567b47315',
