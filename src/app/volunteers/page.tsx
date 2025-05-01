@@ -705,7 +705,7 @@ export default function Volunteers() {
               >
                 <ImageCarousel 
                   images={[
-                    "/images/wecanteam.jpeg",
+                    "/images/WecanTeam.jpeg",
                     "/images/t2.jpeg",
                     "/images/n9.jpeg",
                     "/images/t3.jpeg",
