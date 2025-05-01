@@ -183,7 +183,7 @@ export default function About() {
             We provide comprehensive development through technology education, computer skills, sports, dance, cultural activities, and arts to ensure holistic growth.
           </p>
           <p>
-            We strive to create equal learning opportunities, prepare students for admission to quality institutions like KV NIT Agartala, Ramakrishna Mission, Sainik School, and support them through 10th, 12th grades and competitive exams like JEE.
+            We strive to create equal learning opportunities, prepare students for admission to quality institutions like KV-NIT Agartala, Ramakrishna Mission, Sainik School, and support them through 10th, 12th grades and competitive exams like JEE.
           </p>
         </motion.div>
 
