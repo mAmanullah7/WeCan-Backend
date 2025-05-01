@@ -396,10 +396,10 @@ export default function Ananya() {
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                  <Image src="/images/naman.jpeg" alt="Naman" width={48} height={48} />
+                  <Image src="/images/a4.jpeg" alt="Naman" width={48} height={48} />
                 </div>
                 <div>
-                  <p className="font-bold">Naman, 6</p>
+                  <p className="font-bold">Poonam Das, 5</p>
                   <p className="text-sm text-gray-600">Participant</p>
                 </div>
               </div>

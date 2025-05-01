@@ -262,7 +262,8 @@ export default function Alumni() {
                     "/images/alum.jpeg",
                     "/images/alum1.jpeg",
                     "/images/alumni.jpg",
-                    "/images/team.jpg"
+                    "/images/team.jpg",
+                    "/images/alumn.png"
                   ]}
                   autoplayInterval={4000}
                 />
