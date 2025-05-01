@@ -33,7 +33,7 @@ export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions) as Session | null;
     if (!session) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'Login to register' }, { status: 401 });
     }
 
     const formData = await req.formData();
