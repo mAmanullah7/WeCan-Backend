@@ -33,10 +33,12 @@ export default function AlumniRegister() {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
       graduationYear: new Date().getFullYear(),
+      email: session?.user?.email || '',
     }
   });
 
@@ -58,6 +60,13 @@ export default function AlumniRegister() {
       reader.readAsDataURL(file);
     }
   }, [profilePicture]);
+
+  // Set email from session when session loads
+  useEffect(() => {
+    if (session?.user?.email) {
+      setValue('email', session.user.email);
+    }
+  }, [session, setValue]);
 
   const onSubmit = async (data: FormData) => {
     try {
@@ -207,8 +216,10 @@ export default function AlumniRegister() {
                         })}
                         className={`block w-full pl-10 pr-3 py-2 border ${
                           errors.email ? 'border-red-500' : 'border-gray-300'
-                        } rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary`}
+                        } rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-gray-100`}
                         placeholder="your@email.com"
+                        readOnly
+                        value={session?.user?.email || ''}
                       />
                     </div>
                     {errors.email && (
