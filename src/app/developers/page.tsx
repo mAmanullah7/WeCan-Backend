@@ -458,7 +458,7 @@ export default function Developers() {
               >
                 <ImageCarousel 
                   images={[
-                    "/images/Amanullah4.jpg",
+                    "/images/amanullah4.jpg",
                     "/images/amirxn.jpeg",
                     "/images/talib.jpeg",
                     "/images/suraj.jpeg",
