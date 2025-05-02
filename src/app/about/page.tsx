@@ -73,7 +73,7 @@ export default function About() {
     {
       year: 2025,
       title: 'Digital Initiative',
-      description: 'Started digital literacy programs and launched the WeCan mobile app & launchde our official website.',
+      description: 'Started digital literacy programs and launched the WeCan mobile app & launched our official website.',
     }
    
   ];
