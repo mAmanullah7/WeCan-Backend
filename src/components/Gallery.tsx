@@ -20,7 +20,7 @@ const Gallery = () => {
     { id: 6, src: '/images/cultural1.jpeg', alt: 'Cultural program' },
     { id: 7, src: '/images/n4.jpeg', alt: '' },  
     { id: 8, src: '/images/s2.jpg', alt: '' },
-    { id: 9, src: '/images/c1.jpg', alt: '' },
+    { id: 9, src: '/images/an5.jpeg', alt: '' },
     { id: 10, src: '/images/n3.jpeg', alt: '' },
     { id: 11, src: '/images/n9.jpeg', alt: '' },
     { id: 12, src: '/images/n10.jpeg', alt: '' },

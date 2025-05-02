@@ -32,9 +32,6 @@ cloudinary.config({
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions) as Session | null;
-    if (!session) {
-      return NextResponse.json({ error: 'Login to register' }, { status: 401 });
-    }
 
     const formData = await req.formData();
     const name = formData.get('name') as string;
@@ -49,19 +46,24 @@ export async function POST(req: Request) {
 
     await connectToDatabase();
 
-    // Check if alumni already exists by email or userId
-    const existingAlumni = await Alumni.findOne({
-      $or: [
-        { email },
-        { userId: session.user.id }
-      ]
-    });
+    // Check if alumni already exists by email or userId (if logged in)
+    let existingAlumni;
+    if (session) {
+      existingAlumni = await Alumni.findOne({
+        $or: [
+          { email },
+          { userId: session.user.id }
+        ]
+      });
+    } else {
+      existingAlumni = await Alumni.findOne({ email });
+    }
 
     if (existingAlumni) {
       if (existingAlumni.email === email) {
         return NextResponse.json({ error: 'This email is already registered as an alumni' }, { status: 400 });
       }
-      if (existingAlumni.userId.toString() === session.user.id) {
+      if (session && existingAlumni.userId && existingAlumni.userId.toString() === session.user.id) {
         return NextResponse.json({ error: 'You have already registered as an alumni' }, { status: 400 });
       }
     }
@@ -91,8 +93,7 @@ export async function POST(req: Request) {
     }
 
     // Create new alumni record
-    const alumni = await Alumni.create({
-      userId: session.user.id,
+    const alumniData: any = {
       name,
       email,
       graduationYear,
@@ -103,7 +104,12 @@ export async function POST(req: Request) {
       socialLinks,
       profilePicture: profilePicturePath,
       isApproved: false,
-    });
+    };
+    if (session) {
+      alumniData.userId = session.user.id;
+    }
+
+    const alumni = await Alumni.create(alumniData);
 
     return NextResponse.json(alumni, { status: 201 });
   } catch (error: any) {

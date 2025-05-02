@@ -216,10 +216,10 @@ export default function AlumniRegister() {
                         })}
                         className={`block w-full pl-10 pr-3 py-2 border ${
                           errors.email ? 'border-red-500' : 'border-gray-300'
-                        } rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-gray-100`}
+                        } rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary ${session?.user?.email ? 'bg-gray-100' : ''}`}
                         placeholder="your@email.com"
-                        readOnly
-                        value={session?.user?.email || 'Login to register'}
+                        readOnly={!!session?.user?.email}
+                        value={session?.user?.email ? session.user.email : undefined}
                       />
                     </div>
                     {errors.email && (

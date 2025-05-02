@@ -104,7 +104,7 @@ const teamMembers: TeamMembersByYear = {
       name: 'Kattamuri Sri Gayatri',
       position: 'General Secretary',
       department: 'Computer Science & Engineering',
-      image: '/images/gayatri.jpg',
+      image: '/images/gayatri1.jpg',
       bio: 'Building partnerships to expand our reach and impact in the community.',
       socialLinks: {
         linkedin: 'https://www.linkedin.com/in/sri-gayatri-kattamuri-a2418731b',

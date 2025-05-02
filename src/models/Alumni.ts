@@ -25,7 +25,7 @@ const AlumniSchema: Schema = new Schema(
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: true,
+      required: false,
     },
     name: {
       type: String,

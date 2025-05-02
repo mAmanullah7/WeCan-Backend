@@ -48,7 +48,7 @@ export default function About() {
     {
       year: 2014,
       title: 'Room Alloted',
-      description: 'We got a room specifically for WeCan in ECE building, NIT Agartla.',
+      description: 'We got a room specifically for WeCan in ECE building, NIT Agartala.',
     },
     {
       year: 2015,
