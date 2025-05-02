@@ -169,7 +169,7 @@ export default function Alumni() {
                       <img
                         src={alumnus.profilePicture || '/images/alumni/placeholder.jpg'}
                         alt={`${alumnus.name} - ${alumnus.position}`}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover object-top"
                       />
                       <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div className="flex space-x-4">
