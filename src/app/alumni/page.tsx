@@ -29,6 +29,7 @@ export default function Alumni() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
+  const [expandedBios, setExpandedBios] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     fetchAlumni();
@@ -62,6 +63,18 @@ export default function Alumni() {
   );
 
   const years = Array.from(new Set(alumni.map(a => a.graduationYear))).sort((a, b) => b - a);
+
+  const toggleBio = (id: string) => {
+    setExpandedBios(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
+  const truncateBio = (bio: string, maxLength = 100) => {
+    if (bio.length <= maxLength) return bio;
+    return bio.substring(0, maxLength) + '...';
+  };
 
   if (isLoading) {
     return (
@@ -165,11 +178,11 @@ export default function Alumni() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="bg-white rounded-lg overflow-hidden shadow-custom group"
                   >
-                    <div className="h-64 bg-gray-300 relative">
+                    <div className="h-64 bg-blue-100 relative">
                       <img
                         src={alumnus.profilePicture || '/images/alumni/placeholder.jpg'}
                         alt={`${alumnus.name} - ${alumnus.position}`}
-                        className="h-full w-full object-cover object-top"
+                        className="h-full w-full object-contain"
                       />
                       <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div className="flex space-x-4">
@@ -211,7 +224,17 @@ export default function Alumni() {
                       <h3 className="text-xl font-bold mb-1">{alumnus.name}</h3>
                       <p className="text-primary font-medium mb-2">{alumnus.position}</p>
                       <p className="text-gray-600 text-sm mb-4">{alumnus.currentOrganization}</p>
-                      <p className="text-gray-700">{alumnus.bio}</p>
+                      <p className="text-gray-700">
+                        {expandedBios[alumnus._id] ? alumnus.bio : truncateBio(alumnus.bio)}
+                      </p>
+                      {alumnus.bio.length > 100 && (
+                        <button
+                          className="text-primary font-medium hover:text-primary/80 mt-2"
+                          onClick={() => toggleBio(alumnus._id)}
+                        >
+                          {expandedBios[alumnus._id] ? 'Show Less' : 'Read More'}
+                        </button>
+                      )}
                     </div>
                   </motion.div>
                 ))}
@@ -276,4 +299,4 @@ export default function Alumni() {
       <Footer />
     </>
   );
-} 
+}
