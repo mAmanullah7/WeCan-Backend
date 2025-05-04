@@ -308,7 +308,7 @@ export default function Developers() {
               </p>
               <div className="space-y-4">
                 <a
-                  href="https://github.com/WeCanNita25/WeCan-Backend"
+                  href="https://github.com/WeCanNita25/WeCan-Web-Server"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-primary hover:text-primary/80"

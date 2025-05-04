@@ -102,6 +102,13 @@ export default function Alumni() {
             <div className="w-20 h-1 bg-secondary mx-auto mb-8"></div>
             <p className="max-w-3xl mx-auto text-lg text-white/90">
               Meet our distinguished alumni who continue to make a difference in their communities and beyond.
+              <div className="mt-8">
+                <a href="/alumni/register">
+                    <button className="btn bg-white text-primary hover:bg-white/90">
+                      Register as Alumni
+                    </button>
+                  </a>
+            </div>
             </p>
           </motion.div>
         </div>
