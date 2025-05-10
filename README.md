@@ -498,7 +498,7 @@ For any questions, suggestions, or collaboration opportunities:
 ---
 
 <div align="center">
-  <p>Built with ❤️ by <a href="/developers">WeCan Development Team</a></p>
+  <p>Built with ❤️ by <a href="https://wecan-six.vercel.app/developers">WeCan Development Team</a></p>
   <p>© 2025 WeCan - NIT Agartala</p>
 </div>
 
