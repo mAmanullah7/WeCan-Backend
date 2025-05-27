@@ -241,6 +241,78 @@ export default function AdminDashboard() {
               />
             </div>
           </div>
+
+          {/* Navigation Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-lg shadow-sm border border-gray-100 p-4 hover:shadow-md transition-shadow cursor-pointer"
+              onClick={() => router.push('/admin/users')}
+            >
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-blue-100 rounded-lg">
+                  <FaUser className="text-blue-600 text-lg" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-gray-900">User Management</h3>
+                  <p className="text-sm text-gray-500">Manage system users</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-lg shadow-sm border border-gray-100 p-4"
+            >
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-green-100 rounded-lg">
+                  <FaGraduationCap className="text-green-600 text-lg" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-gray-900">Alumni Requests</h3>
+                  <p className="text-sm text-gray-500">{filteredRequests.length} pending</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-lg shadow-sm border border-gray-100 p-4"
+            >
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-purple-100 rounded-lg">
+                  <FaHeart className="text-purple-600 text-lg" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-gray-900">Volunteers</h3>
+                  <p className="text-sm text-gray-500">{volunteers.length} applications</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="bg-white rounded-lg shadow-sm border border-gray-100 p-4"
+            >
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-yellow-100 rounded-lg">
+                  <FaStar className="text-yellow-600 text-lg" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-gray-900">Ananya Registrations</h3>
+                  <p className="text-sm text-gray-500">{ananyaRegistrations.length} registrations</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
           
           {/* Alumni Requests */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-100 mb-8">
