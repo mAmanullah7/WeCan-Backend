@@ -3,16 +3,28 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/a1a7a8aa-cd12-4940-a86f-56e71afbb9e7" alt="WeCan Logo" width="200" />
   <p><strong>Learn. Lead. Laugh.</strong></p>
+
+<p align="center">
+    <a href="https://github.com/WeCanNita25/WeCan-Web-Server/issues">
+    <img src="https://img.shields.io/github/issues/WeCanNita25/WeCan-Web-Server?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub Open issue"></a>
+</p>
 </div>
 
 
 A comprehensive, responsive website for WeCan, a social welfare club of NIT Agartala, dedicated to empowering underprivileged children through education, mentorship, and skill development programs.
 
-[![Next.js](https://img.shields.io/badge/Next.js-14.1.0-black)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.1-38B2AC)](https://tailwindcss.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-6.14.2-green)](https://www.mongodb.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<div align="center">
+  <p align="center">
+    
+  [![Next.js](https://img.shields.io/badge/Next.js-14.1.0-black)](https://nextjs.org/)
+    [![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
+    [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.1-38B2AC)](https://tailwindcss.com/)
+    [![MongoDB](https://img.shields.io/badge/MongoDB-6.14.2-green)](https://www.mongodb.com/)
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  
+  </p>
+</div>
 
 ## 📑 Table of Contents
 
