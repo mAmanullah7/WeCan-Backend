@@ -7,7 +7,7 @@ const path = require('path');
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 
 // Try a direct connection string
-const uri = "mongodb+srv://developerwecannita:developerwecannita@25@cluster0.2wnqs.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://developerwecannita:<db_password_change_this>@cluster0.2wnqs.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a new MongoClient
 const client = new MongoClient(uri, {
