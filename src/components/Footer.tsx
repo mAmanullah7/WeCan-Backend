@@ -35,7 +35,7 @@ const Footer = () => {
               <a href="https://x.com/WeCan_NITA" className="text-gray-300 hover:text-secondary transition-colors" aria-label="Twitter">
                 <FaTwitter size={20} />
               </a>
-              <a href="https://www.instagram.com/we_can_nita/" className="text-gray-300 hover:text-accent transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/wecan.nita/" className="text-gray-300 hover:text-accent transition-colors" aria-label="Instagram">
                 <FaInstagram size={20} />
               </a>
               <a href="https://www.linkedin.com/company/wecan-nita" className="text-gray-300 hover:text-primary transition-colors" aria-label="LinkedIn">
