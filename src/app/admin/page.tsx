@@ -141,12 +141,8 @@ export default function AdminDashboard() {
 
   const handleReject = async (id: string) => {
     try {
-      const response = await fetch('/api/alumni', {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id, isApproved: false }),
+      const response = await fetch(`/api/alumni?id=${id}`, {
+        method: 'DELETE',
       });
 
       if (!response.ok) {
