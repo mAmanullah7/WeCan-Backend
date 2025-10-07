@@ -168,4 +168,33 @@ export async function PATCH(req: Request) {
     console.error('Error updating alumni status:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
+}
+
+export async function DELETE(req: Request) {
+  try {
+    const session = await getServerSession(authOptions) as Session | null;
+    if (!session || session.user.role !== 'admin') {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get('id');
+
+    if (!id) {
+      return NextResponse.json({ error: 'Alumni ID is required' }, { status: 400 });
+    }
+
+    await connectToDatabase();
+
+    const alumni = await Alumni.findByIdAndDelete(id);
+
+    if (!alumni) {
+      return NextResponse.json({ error: 'Alumni not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Alumni deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting alumni:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
 } 
