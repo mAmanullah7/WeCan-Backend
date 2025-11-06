@@ -38,7 +38,7 @@ const developers: DevelopersByTeam = {
       name: 'Mohammad Amanullah',
       role: 'Lead Developer',
       department: 'Chemical Engineering',
-      image: '/images/amanullah.jpg',
+      image: '/images/amanullah.png',
       bio: 'Former WeCan President & Full-stack developer passionate about creating impactful web applications.',
       socialLinks: {
         linkedin: 'https://www.linkedin.com/in/mamanullah7/',
@@ -458,7 +458,7 @@ export default function Developers() {
               >
                 <ImageCarousel 
                   images={[
-                    "/images/amanullah.jpg",
+                    "/images/amanullah.png",
                     "/images/amirxn.jpeg",
                     "/images/talib.jpeg",
                     "/images/suraj.jpeg",
