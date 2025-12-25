@@ -30,10 +30,10 @@ type TeamMembersByYear = {
 };
 
 // Sample data for volunteers (replace with actual data from API)
-const years = [2025, 2024, 2023, 2022, 2021, 2020];
+const years = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
 
 const teamMembers: TeamMembersByYear = {
-  2025: [
+  2025 : [
     {
       id: 1,
       name: 'Mohammad Amanullah',
@@ -117,7 +117,7 @@ const teamMembers: TeamMembersByYear = {
       name: 'Keerthi Priya',
       position: 'Alumni Relationship Coordinator',
       department: 'Computer Science & Engineering',
-      image: '/images/keerthi2.jpeg',
+      image: '/images/K.jpg',
       socialLinks: {
         linkedin: 'https://www.linkedin.com/in/',
         email: 'srigayatrikattamuri@gmail.com',
@@ -461,6 +461,354 @@ const teamMembers: TeamMembersByYear = {
       },
     },
 
+  // ],
+
+  // 2022: [
+  //   {
+  //     id: 7,
+  //     name: 'Arjun Mehta',
+  //     position: 'President',
+  //     department: 'Computer Science',
+  //     image: '/images/placeholder.jpg',
+  //     bio: 'Led WeCan through a year of significant growth and impact.',
+  //     socialLinks: {
+  //       linkedin: 'https://linkedin.com',
+  //       email: 'example@gmail.com',
+  //       instagram: 'https://instagram.com',
+  //     },
+  //   },
+  //   {
+  //     id: 8,
+  //     name: 'Sneha Joshi',
+  //     position: 'Vice President',
+  //     department: 'Electrical Engineering',
+  //     image: '/images/placeholder.jpg',
+  //     bio: 'Focused on developing innovative teaching methodologies for our centers.',
+  //     socialLinks: {
+  //       linkedin: 'https://linkedin.com',
+  //       email: 'example@gmail.com',
+  //       instagram: 'https://instagram.com',
+  //     },
+  //   },
+  //   // Add more team members for 2022
+  // ],
+  // Add data for other years
+
+  ],
+  2026: [
+   {
+      id: 1,
+      name: 'Chandan Kumar',
+      position: 'President',
+      department: 'Electronics and Communication Engineering',
+      image: '/images/chandan.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/chandan-kumar-75535629a',
+        email: 'ck20181308@gmail.com',
+        instagram: 'https://www.instagram.com/chandan_3638',
+      },
+    },
+    {
+      id: 2,
+      name: 'Buddhadeb Das',
+      position: 'Chief Advisory Officer to the President',
+      department: 'Production Engineering',
+      image: '/images/Buddhadeb.webp',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/buddhadeb-das-bagdi-80ab36255/',
+        email: 'dasbuddhadeb809@gmail.com',
+        instagram: 'https://www.instagram.com/buddha_deb_das_/',
+      },
+    },
+    {
+      id: 3,
+      name: 'Shreyam Kumar',
+      position: 'Vice President',
+      department: 'IIIT CSE',
+      image: '/images/shreyam.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/shreyam-kumar-754b2b28a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        email: 'kumarshreyam677@gmail.com',
+        instagram: 'https://www.instagram.com/shre_yam012?igsh=MXB5djhmdWszdDZqZw==',
+      },
+    },
+    {
+      id: 4,
+      name: 'Sudesh Singh',
+      position: 'Vice President & Extra Curricular Coordinator',
+      department: 'Biotechnology and Biochemical',
+      image: '/images/Sudesh.jpeg',
+      socialLinks: {
+        linkedin: 'http://linkedin.com/in/sudesh-singh-8099722a7',
+        email: 'sudeshsingh42023@gmail.com',
+        instagram: 'https://www.instagram.com/invites/contact/?igsh=h9vscaes0577&utm_content=cgiw83j',
+      },
+    },
+    {
+      id: 5,
+      name: 'Keerthi Priya',
+      position: 'Finance Head & Technical Coordinator',
+      department: 'Computer Science & Engineering',
+      image: '/images/keerthi2.jpeg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/',
+        email: 'srigayatrikattamuri@gmail.com',
+        instagram: 'https://instagram.com/keerthipriya_1712',
+      },
+    },
+    {
+      id: 6,
+      name: 'Saptadeep Deb',
+      position: 'Auditor & Fundraising Coordinator',
+      department: 'BSMS Physics',
+      image: '/images/Saptadeep.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: 'debsaptadeep4@gmail.com',
+        instagram: 'https://www.instagram.com/deb_saptadeep1517?igsh=MTA4NjRzbW80eWJ4ZQ==',
+      },
+    },
+    {
+      id: 7,
+      name: 'Rishi Ranjan Singh',
+      position: 'General Secretary(Internal)',
+      department: 'CSE',
+      image: '/images/rishi.png',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/rishi-ranjan-singh-a1899b314',
+        email: 'rishiranjansingh2303@gmail.com',
+        instagram: 'https://instagram.com/rishiranjansingh_',
+      },
+    },
+    {
+      id: 8,
+      name: 'Abdur Raheem Chowdhary',
+      position: 'General Secretary(External)',
+      department: 'Engineering Physics',
+      image: '/images/raheem.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/abdur-raheem-chowdhary',
+        email: 'abdurraheemchowdhary@gmail.com',
+        instagram: '',
+      },
+    },
+    {
+      id: 9,
+      name: 'Aryan Raj',
+      position: 'Assistant General Secretary',
+      department: 'Production Engineering',
+      image: '/images/aryan.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/aryan-raj-30443225b',
+        email: 'ar493726@gmail.com',
+        instagram: 'https://www.instagram.com/amphonerd?igsh=MWloNWs0bWV2OGhycg==',
+      },
+    },
+    {
+      id: 10,
+      name: 'Prajna Bal',
+      position: 'Assistant General Secretary',
+      department: 'Engineering Physics',
+      image: '/images/prajna.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/prajna-bal-93a793231',
+        email: 'prajnabal2006@gmail.com',
+        instagram: 'https://www.instagram.com/prajna_2103?igsh=MTV5MGNqdGF5dHliZA==',
+      },
+    },
+    {
+      id: 11,
+      name: 'Shivam Kumar',
+      position: 'Alumini Relations Coordinator',
+      department: 'Electrical Engineering',
+      image: '/images/shivam.jpeg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/shivam-kumar-09530b29a',
+        email: 'shivamkumar6097@gmail.com',
+        instagram: 'https://instagram.com/Shivam_01112',
+      },
+    },
+    {
+      id: 12,
+      name: 'Rohan Anand',
+      position: 'Curriculum Coordinator',
+      department: 'Mechanical Engineering',
+      image: '/images/rohan.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/rohan-anand-68a619302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        email: 'rohananand409@gmail.com',
+        instagram: 'https://www.instagram.com/rohan_06_05/',
+      },
+    },
+    {
+      id: 13,
+      name: 'Manish',
+      position: 'Management Coordinator',
+      department: 'Electrical Engineering',
+      image: '/images/manish.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/manish-1bb2b12b8',
+        email: 'yadav31manish@gmail.com',
+        instagram: 'https://www.instagram.com/yadavmanish031/',
+      },
+    },
+    {
+      id: 14,
+      name: 'Puja Das',
+      position: 'Welfare Coordinator',
+      department: 'Computer Science & Engineering',
+      image: '/images/puja.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/puja-das-baa44a235',
+        email: 'pujadas080907@gmail.com',
+        instagram: 'https://www.instagram.com/__pujadas._?igsh=MTk2MTdraHhwc2swcQ==',
+      },
+    },
+    {
+      id: 15,
+      name: 'B Sushmitha',
+      position: 'Management Lead',
+      department: 'Electronics and Communication Engineering',
+      image: '/images/sushmita.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: 'bsushmitha6106@gmail.com',
+        instagram: '',
+      },
+    },
+    {
+      id: 16,
+      name: 'Anjali Gupta',
+      position: 'Extra Curricular Lead',
+      department: 'Civil Engineering',
+      image: '/images/anjali.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/anjali-gupta-207073306',
+        email: 'guptanjali0904@gmail.com',
+        instagram: 'https://www.instagram.com/anjjali_09?igsh=MTJwNGloenVjNWpuZg==',
+      },
+    },
+    {
+      id: 17,
+      name: 'Satyendra',
+      position: 'Fundraising Lead',
+      department: 'Production Engineering',
+      image: '/images/satyendra.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/satyendra-shankar-241481362',
+        email: 'satyendrashankar2005@gmail.com',
+        instagram: 'https://www.instagram.com/_.satya_indra._?igsh=aTE3YmpvajRlY241',
+      },
+    },
+    {
+      id: 18,
+      name: 'Khushi Kumari',
+      position: 'Curriculum Lead',
+      department: 'Production',
+      image: '/images/khusi.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: 'khushisujata5@gmail.com',
+        instagram: '',
+      },
+    },
+    {
+      id: 19,
+      name: 'Suraj Kumar',
+      position: 'Alumini Relations Lead',
+      department: 'Computer Science & Engineering',
+      image: '/images/lucky.jpg',
+      socialLinks: {
+        linkedin: 'https://www.linkedin.com/in/suraj-kumar-567b47315',
+        email: 'codingfather24@gmail.com',
+        instagram: '',
+      },
+    },
+    {
+      id: 20,
+      name: 'Ignatius Praveen Antony',
+      position: 'Technical Lead',
+      department: '',
+      image: '/images/placeholder.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: '',
+        instagram: '',
+      },
+    },
+    {
+      id: 21,
+      name: 'Mamtha',
+      position: 'Welfare Lead',
+      department: '',
+      image: '/images/placeholder.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: '',
+        instagram: '',
+      },
+    },
+    {
+      id: 22,
+      name: 'Sivaramakrishnan',
+      position: 'Social Media Lead',
+      department: '',
+      image: '/images/placeholder.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: '',
+        instagram: '',
+      },
+    },
+    {
+      id: 23,
+      name: 'Pushparaj J',
+      position: 'Social Media Lead',
+      department: '',
+      image: '/images/placeholder.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: '',
+        instagram: '',
+      },
+    },
+    {
+      id: 24,
+      name: 'Akash Debbarma',
+      position: 'Design & Editing Lead',
+      department: '',
+      image: '/images/placeholder.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: '',
+        instagram: '',
+      },
+    },
+    {
+      id: 25,
+      name: 'Abhishek Kumar',
+      position: 'Design & Editing Lead',
+      department: '',
+      image: '/images/placeholder.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: '',
+        instagram: '',
+      },
+    },
+    {
+      id: 26,
+      name: 'Sulochana Mandal',
+      position: 'PR Lead',
+      department: '',
+      image: '/images/placeholder.jpg',
+      socialLinks: {
+        linkedin: '',
+        email: '',
+        instagram: '',
+      },
+    },
+
   ],
 
   // 2022: [
@@ -493,6 +841,7 @@ const teamMembers: TeamMembersByYear = {
   //   // Add more team members for 2022
   // ],
   // Add data for other years
+  
   2021: [],
   2020: [],
   2019: [],
