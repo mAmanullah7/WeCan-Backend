@@ -715,7 +715,7 @@ const teamMembers: TeamMembersByYear = {
     {
       id: 19,
       name: 'Suraj Kumar',
-      position: 'Alumini Relations Lead',
+      position: 'Alumni Relations Lead',
       department: 'Computer Science & Engineering',
       image: '/images/lucky.jpg',
       socialLinks: {
