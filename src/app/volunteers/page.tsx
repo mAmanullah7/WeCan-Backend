@@ -33,7 +33,7 @@ type TeamMembersByYear = {
 const years = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
 
 const teamMembers: TeamMembersByYear = {
-  2025 : [
+  2025: [
     {
       id: 1,
       name: 'Mohammad Amanullah',
