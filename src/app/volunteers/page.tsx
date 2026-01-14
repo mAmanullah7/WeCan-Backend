@@ -475,25 +475,6 @@ const teamMembers: TeamMembersByYear = {
   //       linkedin: 'https://linkedin.com',
   //       email: 'example@gmail.com',
   //       instagram: 'https://instagram.com',
-  //     },
-  //   },
-  //   {
-  //     id: 8,
-  //     name: 'Sneha Joshi',
-  //     position: 'Vice President',
-  //     department: 'Electrical Engineering',
-  //     image: '/images/placeholder.jpg',
-  //     bio: 'Focused on developing innovative teaching methodologies for our centers.',
-  //     socialLinks: {
-  //       linkedin: 'https://linkedin.com',
-  //       email: 'example@gmail.com',
-  //       instagram: 'https://instagram.com',
-  //     },
-  //   },
-  //   // Add more team members for 2022
-  // ],
-  // Add data for other years
-
   ],
   2026: [
    {
