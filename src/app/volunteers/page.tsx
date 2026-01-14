@@ -619,7 +619,7 @@ const teamMembers: TeamMembersByYear = {
     {
       id: 11,
       name: 'Shivam Kumar',
-      position: 'Alumini Relations Coordinator',
+      position: 'Alumni Relations Coordinator',
       department: 'Electrical Engineering',
       image: '/images/shivam.jpeg',
       socialLinks: {
