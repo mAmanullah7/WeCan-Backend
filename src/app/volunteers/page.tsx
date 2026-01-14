@@ -583,7 +583,7 @@ const teamMembers: TeamMembersByYear = {
     {
       id: 8,
       name: 'Abdur Raheem Chowdhary',
-      position: 'General Secretary(External)',
+      position: 'General Secretary (External)',
       department: 'Engineering Physics',
       image: '/images/raheem.jpg',
       socialLinks: {
